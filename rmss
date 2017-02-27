@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-# Delete all screenshots (Written for OS X)
-rm $HOME/Desktop/Screen\ Shot*
+# Delete all screenshots (MacOS)
+mv $HOME/Desktop/Screen\ Shot* ~/.Trash
