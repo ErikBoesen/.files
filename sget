@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+mkdir $HOME/Desktop/sget
+
+timestamp=`date +%s`
+echo $timestamp
+cmd="curl -L $1 > ~/sget/$timestamp"
+echo $cmd
+ssh -t home ${cmd}
+
+scp -r home:~/sget/$timestamp $HOME/Desktop/sget/$timestamp
+
+open $HOME/Desktop/sget/$timestamp
