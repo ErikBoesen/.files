@@ -3,8 +3,7 @@
 mkdir -p $HOME/Desktop/sget
 
 timestamp=`date +%s`
-cmd="curl -L $1 > ~/sget/$timestamp"
-ssh -t home $cmd
+ssh -t home "mkdir -p ~/sget; curl -L $1 > ~/sget/$timestamp"
 
 scp -r home:~/sget/$timestamp $HOME/Desktop/sget/$timestamp
 
