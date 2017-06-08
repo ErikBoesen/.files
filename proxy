@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
 
-echo "Changing proxy settings..."
+printf "Changing proxy settings... "
 ssh root@localhost -t "networksetup -setsocksfirewallproxy Wi-Fi 'localhost' 2114 && networksetup -setsocksfirewallproxystate Wi-Fi on" 2> /dev/null
-echo "Proxy enabled."
+echo "settings changed successfully."
 
-echo "Launching proxy... (Press Ctrl+C when done)"
+echo "Launching SSH proxy... (Press Ctrl+C when done)"
 ssh -ND 2114 serv 2> /dev/null
+echo; echo "Proxy terminated."
 
-echo "Proxy terminated. Resetting settings..."
+printf "Resetting settings... "
 ssh root@localhost -t "networksetup -setsocksfirewallproxy Wi-Fi '' '' && networksetup -setsocksfirewallproxystate Wi-Fi off" 2> /dev/null
-echo "Settings reset. Goodbye!"
+echo "settings reset. Goodbye!"
