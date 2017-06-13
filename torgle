@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ `gsettings get org.gnome.system.proxy.socks port` = "0" ]; then
+	toron
+else
+	toroff
+fi
+
