@@ -17,6 +17,23 @@ case $1 in
         assu "networksetup -setsocksfirewallproxy Wi-Fi '' '' && networksetup -setsocksfirewallproxystate Wi-Fi off"
         echo "✓"
         ;;
+    status)
+        if assu "networksetup -getsocksfirewallproxy Wi-Fi" | grep "Enabled: Yes" >/dev/null; then
+            echo "Proxy is enabled."
+        else
+            echo "Proxy is disabled."
+        fi
+        up 8.8.8.8
+        up_8888=$?
+        up $host
+        up_host=$?
+        if [ $up_8888 -eq 0 ]; then
+            echo "✓ 8.8.8.8"
+        fi
+        if [ $up_host -eq 0 ]; then
+            echo "✓ $host"
+        fi
+        ;;
     loc)
         if [ $2 -eq "" ]; then
             echo "SSH alias or user@host pair required."
