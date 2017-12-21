@@ -1,6 +1,0 @@
-#!/bin/bash
-# Disable connection to SOCKS5 proxy on server
-
-printf "Resetting proxy settings... "
-ssh root@localhost -t "networksetup -setsocksfirewallproxy Wi-Fi '' '' && networksetup -setsocksfirewallproxystate Wi-Fi off" 2> /dev/null
-echo "done."

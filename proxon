@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-# Enable SOCKS5 proxy through server
-
-printf "Enabling proxy... "
-ssh root@localhost -t "networksetup -setsocksfirewallproxy Wi-Fi 'boesen.science' 2114 && networksetup -setsocksfirewallproxystate Wi-Fi on" 2> /dev/null
-echo "done."

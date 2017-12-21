@@ -1,0 +1,48 @@
+#!/bin/bash
+
+host="boesen.science"
+port=2114
+
+assu() { ssh root@localhost -t "$@" 2>/dev/null; }
+up  () { ping -c 1 -t 1 $1           >/dev/null; }
+
+case $1 in
+    on)
+        printf "Enabling proxy... "
+        assu "networksetup -setsocksfirewallproxy Wi-Fi '$host' $port && networksetup -setsocksfirewallproxystate Wi-Fi on"
+        echo "✓"
+        ;;
+    off)
+        printf "Resetting proxy settings... "
+        assu "networksetup -setsocksfirewallproxy Wi-Fi '' '' && networksetup -setsocksfirewallproxystate Wi-Fi off"
+        echo "✓"
+        ;;
+    loc)
+        if [ $2 -eq "" ]; then
+            echo "SSH alias or user@host pair required."
+            exit 1
+        fi
+        printf "Changing proxy settings... "
+        assu "networksetup -setsocksfirewallproxy Wi-Fi 'localhost' $port && networksetup -setsocksfirewallproxystate Wi-Fi on"
+        echo "✓"
+
+        echo "Launching SSH proxy... (Press Ctrl+C when done)"
+        ssh -ND $port $2 >/dev/null
+        echo; echo "Proxy terminated."
+
+        printf "Resetting settings... "
+        assu "networksetup -setsocksfirewallproxy Wi-Fi '' '' && networksetup -setsocksfirewallproxystate Wi-Fi off"
+        echo "✓"
+        ;;
+    *)
+        echo "Usage:"
+        echo "    prox COMMAND [OPTIONS...]"
+        echo
+        echo "Commands:"
+        echo "    * on - connect to hosted proxy"
+        echo "    * off - disconnect from hosted proxy"
+        echo "    * status - get status of proxy connection"
+        echo "    * loc - host SSH proxy locally and connect to it until interrupt"
+        echo "        * server - valid SSH alias or user@host pair"
+        echo "    * help - show this help menu"
+esac
