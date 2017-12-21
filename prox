@@ -35,7 +35,7 @@ case $1 in
         fi
         ;;
     loc)
-        if [ $2 -eq "" ]; then
+        if [ "$2" = "" ]; then
             echo "SSH alias or user@host pair required."
             exit 1
         fi
@@ -44,7 +44,7 @@ case $1 in
         echo "✓"
 
         echo "Launching SSH proxy... (Press Ctrl+C when done)"
-        ssh -ND $port $2 >/dev/null
+        ssh -ND $port $2 2>/dev/null
         echo; echo "Proxy terminated."
 
         printf "Resetting settings... "
@@ -62,4 +62,5 @@ case $1 in
         echo "    * loc - host SSH proxy locally and connect to it until interrupt"
         echo "        * server - valid SSH alias or user@host pair"
         echo "    * help - show this help menu"
+        exit 1
 esac
