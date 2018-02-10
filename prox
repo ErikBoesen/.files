@@ -1,6 +1,6 @@
 #!/bin/bash
 
-host="boesen.science"
+host="184.73.149.102"
 port=2114
 
 assu() { ssh root@localhost -t "$@" 2>/dev/null; }
