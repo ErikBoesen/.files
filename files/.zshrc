@@ -1,6 +1,5 @@
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin
 export PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
-export PATH=$PATH:/usr/local/Cellar/qt/5.10.0_1/bin
 
 
 export GOPATH=/usr/local/go
