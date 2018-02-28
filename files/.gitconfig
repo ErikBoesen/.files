@@ -1,0 +1,10 @@
+[user]
+	name = ErikBoesen
+	email = me@erikboesen.com
+	signingkey = 0D7CFF6768CF10D8CBE72D8AAE87239A4A8A2A1A
+[credential]
+	helper = store
+[commit]
+	gpgsign = true
+[core]
+	whitespace = warn
