@@ -29,5 +29,3 @@ function su()   { ssh root@localhost 2>/dev/null }
 
 #printf '\r\n'
 #neofetch
-
-alias dep="python3 robot/robot.py deploy"
