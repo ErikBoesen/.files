@@ -15,17 +15,16 @@ alias burn="git clone https://github.com/ErikBoesen/setdown ~/setdown ; ssh root
 alias python="python3"
 alias notes="cd ~/ibhlcs/notes && jupyter notebook"
 
-function tba() {
+function tba {
     curl -s "https://www.thebluealliance.com/api/v3/$1?X-TBA-Auth-Key=$TBAKEY"
     echo
 }
-
-function gorm() {
+function gorm {
     rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
 }
 
-function sudo() { ssh root@localhost -t "$@" 2>/dev/null }
-function su()   { ssh root@localhost 2>/dev/null }
+function sudo { ssh root@localhost -t "$@" 2>/dev/null }
+function su   { ssh root@localhost 2>/dev/null }
 
 #printf '\r\n'
 #neofetch
