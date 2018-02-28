@@ -1,10 +1,8 @@
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin
 export PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
-
-
 export GOPATH=/usr/local/go
 export PATH=$PATH:$GOPATH/bin
-# Path to oh-my-zsh installation.
+
 export ZSH=/Users/boesene/.oh-my-zsh
 
 ZSH_THEME="erkbsn"
@@ -33,8 +31,5 @@ function su()   { ssh root@localhost 2>/dev/null }
 
 #printf '\r\n'
 #neofetch
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
 alias dep="python3 robot/robot.py deploy"
