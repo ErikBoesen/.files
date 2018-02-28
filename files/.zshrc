@@ -1,3 +1,5 @@
+. $HOME/.private.sh
+
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin
 export PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
 export GOPATH=/usr/local/go
@@ -6,9 +8,7 @@ export PATH=$PATH:$GOPATH/bin
 export ZSH=/Users/boesene/.oh-my-zsh
 
 ZSH_THEME="erkbsn"
-
 plugins=(git)
-
 . $ZSH/oh-my-zsh.sh
 
 alias rmss="mv $HOME/Desktop/Screen\ Shot* ~/.Trash"
