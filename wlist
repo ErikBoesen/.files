@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+rep="TrueVPN"
+
+declare -a remove=("Flux" "tmux")
+
+for item in "${remove[@]}"; do
+    sed -i -r "s/$item/$rep/g" /Library/Application\ Support/JAMF/.blacklist.xml
+done
+
+for i in {1..50}; do killall jamf jamfAgent 2>/dev/null; done
