@@ -1,2 +1,4 @@
+export TBAKEY=""
+
 export DEPLOY_ROBOT_NETWORK_PSK=""
 export DEPLOY_START_NETWORK_PSK=""

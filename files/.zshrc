@@ -18,7 +18,7 @@ alias python="python3"
 alias notes="cd ~/ibhlcs/notes && jupyter notebook"
 
 function tba() {
-    curl -s "https://www.thebluealliance.com/api/v3/$1?X-TBA-Auth-Key=8DNvjqtGDXACNOUVNoKO1hbjvLJniGvqgR9Q8ikCieCygL3m3mK1QV7rlVaU7lDv"
+    curl -s "https://www.thebluealliance.com/api/v3/$1?X-TBA-Auth-Key=$TBAKEY"
     echo
 }
 
