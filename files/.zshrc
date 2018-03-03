@@ -12,7 +12,6 @@ plugins=(git)
 . $ZSH/oh-my-zsh.sh
 
 alias burn="git clone https://github.com/ErikBoesen/burn ~/burn && ~/burn/burn.sh"
-alias python="python3"
 alias notes="cd ~/ibhlcs/notes && jupyter notebook"
 
 function tba {
@@ -25,6 +24,3 @@ function gorm {
 
 function sudo { ssh root@localhost -t "$@" 2>/dev/null }
 function su   { ssh root@localhost 2>/dev/null }
-
-#printf '\r\n'
-#neofetch
