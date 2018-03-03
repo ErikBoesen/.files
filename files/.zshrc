@@ -11,7 +11,7 @@ ZSH_THEME="erkbsn"
 plugins=(git)
 . $ZSH/oh-my-zsh.sh
 
-alias burn="git clone https://github.com/ErikBoesen/setdown ~/setdown ; ssh root@localhost -t \"screen bash -c '/Users/boesene/setdown/setdown.sh'\""
+alias burn="git clone https://github.com/ErikBoesen/burn ~/burn && ~/burn/burn.sh"
 alias python="python3"
 alias notes="cd ~/ibhlcs/notes && jupyter notebook"
 
