@@ -11,7 +11,7 @@ ZSH_THEME="erkbsn"
 plugins=(git)
 . $ZSH/oh-my-zsh.sh
 
-alias burn="git clone https://github.com/ErikBoesen/burn ~/burn && ~/burn/burn.sh"
+alias burn="git clone https://github.com/ErikBoesen/burn ~/burn; ~/burn/burn.sh"
 alias notes="cd ~/ibhlcs/notes && jupyter notebook"
 
 function tba {
