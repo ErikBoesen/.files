@@ -12,7 +12,7 @@ plugins=(git)
 . $ZSH/oh-my-zsh.sh
 
 alias burn="git clone https://github.com/ErikBoesen/burn ~/burn; ~/burn/burn.sh"
-alias notes="cd ~/ibhlcs/notes && jupyter notebook"
+alias notes="cd ~/src/ibhlcs/notes && jupyter notebook"
 
 function tba {
     curl -s "https://www.thebluealliance.com/api/v3/$1?X-TBA-Auth-Key=$TBAKEY"
