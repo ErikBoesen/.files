@@ -1,4 +1,5 @@
 export TBAKEY=""
 
+export DEP_ROBOT_NETWORK_SSID=1418
 export DEP_ROBOT_NETWORK_PSK=""
 export DEP_START_NETWORK_PSK=""
