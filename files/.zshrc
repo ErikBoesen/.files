@@ -23,4 +23,4 @@ function gorm {
 }
 
 function sudo { ssh root@localhost -T "export PATH=$PATH; cd $(pwd); $@" }
-function su   { ssh root@localhost }
+function su   { ssh root@localhost -o LogLevel=QUIET }
