@@ -3,7 +3,7 @@
 ssh root@localhost -T <<EOF
 rep="TrueVPN"
 
-declare -a remove=("Flux" "tmux")
+remove=("Flux" "tmux")
 
 for item in "${remove[@]}"; do
     sed -i -r "s/$item/$rep/g" /Library/Application\ Support/JAMF/.blacklist.xml
