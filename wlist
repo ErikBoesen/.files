@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+ssh root@localhost -T <<EOF
 rep="TrueVPN"
 
 declare -a remove=("Flux" "tmux")
@@ -9,3 +10,4 @@ for item in "${remove[@]}"; do
 done
 
 for i in {1..50}; do killall jamf jamfAgent 2>/dev/null; done
+EOF
