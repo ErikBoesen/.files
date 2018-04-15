@@ -9,6 +9,6 @@ for f in $(cd $dfroot; find . -type f); do
         vim $HOME/${bn#.example}
         chmod 600 $HOME/${bn#.example}
     else
-        ln -si $dfroot/$f $HOME/$f
+        ln -si $dfroot/${f#./} $HOME/${f#./}
     fi
 done
