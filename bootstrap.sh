@@ -23,6 +23,5 @@ function install {
     done
 }
 
-dfroot="$(dirname $(realpath $0))"
 install files
-install $dfroot/files_$(hostname)
+install files_$(hostname)
