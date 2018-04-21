@@ -4,9 +4,6 @@
 	email = me@erikboesen.com
 [commit]
 	gpgsign = true
-[alias]
-	log = log --pretty=oneline
-
 [credential]
 	helper = store
 [core]
