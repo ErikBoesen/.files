@@ -9,7 +9,6 @@ plugins=(git zsh-syntax-highlighting)
 
 alias torrent="transmission-cli"
 alias http="sudo python3 -m http.server 80"
-alias selfdestruct="cd net/control/mac;mv update.sh update-normal.sh;mv exit.sh update.sh;cd"
 
 alias update="tmux new-session -s updates bash -c 'sudo zypper update -y && rm ~/.update' >/dev/null"
 alias leoupd="cd ~/leopard;git pull;zip -r ~/www/leopard.zip ."
