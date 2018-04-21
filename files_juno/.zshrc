@@ -1,3 +1,5 @@
+. $HOME/.private.sh
+
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin
 export GOPATH=/usr/local/go
 
