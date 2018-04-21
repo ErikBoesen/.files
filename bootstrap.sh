@@ -13,8 +13,8 @@ function install {
                 echo "Ya existe archivo privado ${bn#.example}."
             fi
         else
-            echo "$(realpath $dir/${f#./}) -> $HOME/${f#./}"
-            ln -si $(realpath $dir/${f#./}) $HOME/${f#./}
+            echo "$(realpath $dir/$f) -> $HOME/${f#./}"
+            ln -si $(realpath $dir/$f) $HOME/${f#./}
         fi
     done
 }
