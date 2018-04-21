@@ -31,7 +31,7 @@ function tba() {
     echo
 }
 
-#alsi -l
+alsi -l
 
 if [ -e $HOME/.update ]; then
 	printf "Check for updates? $fg[green](y):$reset_color "
