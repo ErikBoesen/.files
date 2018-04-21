@@ -17,7 +17,7 @@ function install {
                 echo "Ya existe archivo privado ${bn#.example}."
             fi
         else
-            echo "$(realpath $dir/$f) -> $HOME/${f#./}"
+            echo "${CYAN}$(realpath $dir/$f)${RESET} -> ${GREEN}$HOME/${f#./}${RESET}"
             ln -sf $(realpath $dir/$f) $HOME/${f#./}
         fi
     done
