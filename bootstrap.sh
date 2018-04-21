@@ -14,10 +14,10 @@ function install {
                 vim $HOME/${bn#.example}
                 chmod 600 $HOME/${bn#.example}
             else
-                echo "Ya existe archivo privado ${bn#.example}."
+                printf "Ya existe archivo privado ${bn#.example}.\n"
             fi
         else
-            echo "${CYAN}$(realpath $dir/$f)${RESET} -> ${GREEN}$HOME/${f#./}${RESET}"
+            printf "${CYAN}$(realpath $dir/$f)${RESET} -> ${GREEN}$HOME/${f#./}${RESET}\n"
             ln -sf $(realpath $dir/$f) $HOME/${f#./}
         fi
     done
