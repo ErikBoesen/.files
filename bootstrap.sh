@@ -20,3 +20,4 @@ function install {
 
 dfroot="$(dirname $(realpath $0))"
 install $dfroot/files
+install $dfroot/files_$(hostname)
