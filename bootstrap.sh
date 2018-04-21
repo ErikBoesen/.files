@@ -8,6 +8,7 @@ function install {
     dir="$1"
     for f in $(cd $dir; find . -type f); do
         bn=$(basename "$f")
+        mkdir -p $(dirname $(realpath $dir/$f))
         if [[ "$bn" == ".example"* ]]; then
             if ! [[ -e $HOME/$(dirname "$f")/${bn#.example} ]]; then
                 cp "$dir/$f" $HOME/$(dirname "$f")/${bn#.example}
