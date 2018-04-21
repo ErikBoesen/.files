@@ -26,8 +26,8 @@ alias st="ssh juno -t 'tmux a'"
 
 printf '\r'
 
-function tba() {
-    curl -s "https://www.thebluealliance.com/api/v3/$1?X-TBA-Auth-Key=8DNvjqtGDXACNOUVNoKO1hbjvLJniGvqgR9Q8ikCieCygL3m3mK1QV7rlVaU7lDv"
+function tba {
+    curl -s "https://www.thebluealliance.com/api/v3/$1?X-TBA-Auth-Key=$TBAKEY"
     echo
 }
 
