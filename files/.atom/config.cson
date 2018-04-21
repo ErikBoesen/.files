@@ -15,6 +15,7 @@
     colors:
       abaseColor: "#ff3d33"
   core:
+    autoHideMenuBar: true
     telemetryConsent: "limited"
     themes: [
       "atom-material-ui"

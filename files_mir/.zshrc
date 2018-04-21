@@ -18,7 +18,6 @@ alias vup="pamixer --increase"
 alias vdown="pamixer --decrease"
 
 alias torrent="transmission-cli"
-alias st="ssh juno -t 'tmux a'"
 
 function tba {
     curl -s "https://www.thebluealliance.com/api/v3/$1?X-TBA-Auth-Key=$TBAKEY"
