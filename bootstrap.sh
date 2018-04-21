@@ -14,7 +14,7 @@ function install {
             fi
         else
             echo "$(realpath $dir/$f) -> $HOME/${f#./}"
-            ln -si $(realpath $dir/$f) $HOME/${f#./}
+            ln -sf $(realpath $dir/$f) $HOME/${f#./}
         fi
     done
 }
