@@ -1,10 +1,8 @@
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin
+export GOPATH=/usr/local/go
 
-# Path to oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="erkbsn"
-
-export GOPATH="/usr/local/go"
 plugins=(git zsh-syntax-highlighting)
 
 . $ZSH/oh-my-zsh.sh
@@ -14,7 +12,7 @@ alias http="sudo python3 -m http.server 80"
 alias selfdestruct="cd net/control/mac;mv update.sh update-normal.sh;mv exit.sh update.sh;cd"
 
 alias update="tmux new-session -s updates bash -c 'sudo zypper update -y && rm ~/.update' >/dev/null"
-alias leoupd="cd ~/leopard;git pull;zip -r ~/www/leopard.zip ." 
+alias leoupd="cd ~/leopard;git pull;zip -r ~/www/leopard.zip ."
 
 printf '\r\n'
 echo "  $fg[cyan]J$fg[green] U$fg[yellow] N$fg[red] O 🚀$reset_color"
