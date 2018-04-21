@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+CYAN="\e[36m"
+GREEN="\e[32m"
+RESET="\e[0m"
+
 function install {
     dir="$1"
     for f in $(cd $dir; find . -type f); do
