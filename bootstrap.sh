@@ -18,7 +18,7 @@ function install {
                 printf "Ya existe archivo privado ${bn#.example}.\n"
             fi
         else
-            printf "${CYAN}$(realpath $dir/$f)${RESET} -> ${GREEN}$HOME/${f#./}${RESET}\n"
+            printf "${CYAN}$(realpath $dir/$f)${RESET} -> ${GREEN}~/${f#./}${RESET}\n"
             ln -sf $(realpath $dir/$f) $HOME/${f#./}
         fi
     done
