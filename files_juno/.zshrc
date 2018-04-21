@@ -16,7 +16,6 @@ alias leoupd="cd ~/leopard;git pull;zip -r ~/www/leopard.zip ."
 printf '\r\n'
 echo "  $fg[cyan]J$fg[green] U$fg[yellow] N$fg[red] O 🚀$reset_color"
 echo "  $fg[blue]$(uptime | awk '{print $3 "d " substr($5, 1, length($5)-1)}').$reset_color"
-#echo
 
 new_nodes=$(sed -n '/INCOMING/,$p' ~/ips)
 
@@ -24,9 +23,6 @@ if [ $(printf "$new_nodes\n" | wc -l) -gt 1 ]; then
 	echo $fg[yellow]$new_nodes$reset_color
 	echo
 fi
-
-#ls
-#echo
 
 if [ -e $HOME/.update ]; then
 	printf "Check for updates? $fg[green](y):$reset_color "
