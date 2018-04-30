@@ -5,9 +5,6 @@
     html:
       wrap_line_length: 0
   "atom-latex":
-    bibtex: "/usr/local/texlive/2017/bin/x86_64-darwin/bibtex"
-    build_after_save: false
-    compiler: "/usr/local/texlive/2017/bin/x86_64-darwin/pdflatex"
     hide_log_if_success: true
     preview_after_build: "Do nothing"
     save_on_build: true
@@ -32,4 +29,3 @@
   minimap: {}
   welcome:
     showOnStartup: false
-
