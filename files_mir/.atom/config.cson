@@ -1,3 +1,35 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "30dcdbc9-30cc-42ba-9ebc-5c683164f8b1"
+    html:
+      wrap_line_length: 0
+  "atom-latex":
+    bibtex: "/usr/local/texlive/2017/bin/x86_64-darwin/bibtex"
+    build_after_save: false
+    compiler: "/usr/local/texlive/2017/bin/x86_64-darwin/pdflatex"
+    hide_log_if_success: true
+    preview_after_build: "Do nothing"
+    save_on_build: true
+  "atom-material-ui":
+    colors:
+      abaseColor: "#ff3d33"
+  core:
+    autoHideMenuBar: true
+    telemetryConsent: "limited"
+    themes: [
+      "atom-material-ui"
+      "victis-syntax"
+    ]
+  editor:
+    softWrap: true
+    tabLength: 4
   "exception-reporting":
-    userId: "e3879e42-e3e3-4159-843d-018c96605570"
+    userId: "ac5deb7f-3a94-4581-8ee4-5a2029783b38"
+  "linter-pylama":
+    ignoreErrorsAndWarnings: "D203,D212,D213,D404,E501"
+  "linter-ui-default": {}
+  minimap: {}
+  welcome:
+    showOnStartup: false
+
