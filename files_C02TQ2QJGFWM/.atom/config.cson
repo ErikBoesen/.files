@@ -6,7 +6,6 @@
       wrap_line_length: 0
   "atom-latex":
     bibtex: "/usr/local/texlive/2017/bin/x86_64-darwin/bibtex"
-    build_after_save: false
     clean_after_build: true
     compiler: "/usr/local/texlive/2017/bin/x86_64-darwin/pdflatex"
     compiler_param: "-synctex=1 -shell-escape -interaction=nonstopmode -file-line-error"
