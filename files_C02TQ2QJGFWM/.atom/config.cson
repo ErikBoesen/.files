@@ -11,7 +11,7 @@
     compiler_param: "-synctex=1 -shell-escape -interaction=nonstopmode -file-line-error"
     file_ext_to_clean: "*.aux, *.bbl, *.blg, *.idx, *.ind, *.lof, *.lot, *.out, *.toc, *.acn, *.acr, *.alg, *.glg, *.glo, *.gls, *.ist, *.fls, *.log, *.fdb_latexmk, *.synctex.gz"
     hide_log_if_success: true
-    preview_after_build: "Do nothing"
+    preview_after_build: "View in PDF viewer tab"
     save_on_build: true
     toolchain: "custom toolchain"
   "atom-material-ui":
