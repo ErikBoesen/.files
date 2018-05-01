@@ -6,19 +6,16 @@
       wrap_line_length: 0
   "atom-latex":
     bibtex: "/usr/local/texlive/2017/bin/x86_64-darwin/bibtex"
-    build_after_save: false
     clean_after_build: true
-    compiler: "/usr/local/texlive/2017/bin/x86_64-darwin/pdflatex"
-    compiler_param: "-synctex=1 -shell-escape -interaction=nonstopmode -file-line-error"
+    compiler: "/usr/local/texlive/2017/bin/x86_64-darwin/latex"
+    compiler_param: "-synctex=1 --shell-escape -interaction=nonstopmode -file-line-error"
     hide_log_if_success: true
-    preview_after_build: "Do nothing"
+    preview_after_build: "View in PDF viewer tab"
     save_on_build: true
-    toolchain: "custom toolchain"
   "atom-material-ui":
     colors:
       abaseColor: "#ff3d33"
   core:
-    autoHideMenuBar: true
     telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
