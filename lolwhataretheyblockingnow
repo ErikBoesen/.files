@@ -4,9 +4,7 @@ import xml.etree.ElementTree as etree
 
 BLACKLIST_PATH = '/Library/Application Support/JAMF/.blacklist.xml'
 
-tree = etree.parse(BLACKLIST_PATH)
-blacklist = tree.getroot()
-
+blacklist = etree.parse(BLACKLIST_PATH).getroot()
 for item in blacklist:
     print('{name} / {process}'.format(name=item[1].text,
                                       process=item[2].text))
