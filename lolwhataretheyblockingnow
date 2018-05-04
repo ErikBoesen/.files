@@ -2,7 +2,9 @@
 
 import xml.etree.ElementTree as etree
 
-tree = etree.parse('/Library/Application Support/JAMF/.blacklist.xml')
+BLACKLIST_PATH = '/Library/Application Support/JAMF/.blacklist.xml'
+
+tree = etree.parse(BLACKLIST_PATH)
 root = tree.getroot()
 
 for item in root:
