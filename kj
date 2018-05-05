@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ssh root@localhost -T <<'EOT'
+echo "Suppressing as $(whoami)..."
 for ((;;)); do
     killall jamf jamfAgent 2>/dev/null
 done
