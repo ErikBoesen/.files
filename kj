@@ -1,0 +1,7 @@
+#!/bin/bash
+
+ssh root@localhost -T <<'EOT'
+for ((;;)); do
+    killall jamf jamfAgent
+done
+EOT
