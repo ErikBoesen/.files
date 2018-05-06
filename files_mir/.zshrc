@@ -1,6 +1,6 @@
 . $HOME/.private.sh
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
 export PATH=$PATH:/home/erik/.gem/ruby/2.4.0/bin
 export GOPATH=/usr/local/go
 export PATH=$PATH:$GOPATH/bin
