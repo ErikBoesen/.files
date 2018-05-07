@@ -3,8 +3,8 @@
 host="184.73.149.102"
 port=2114
 
-assu { ssh root@localhost -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -t "$@" 2>/dev/null; }
-up   { ping -c 1 -t 1 $1           >/dev/null; }
+assu() { ssh root@localhost -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -t "$@" 2>/dev/null; }
+up  () { ping -c 1 -t 1 $1           >/dev/null; }
 
 case $1 in
     on)
