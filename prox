@@ -13,14 +13,24 @@ is_enabled() {
 
 case $1 in
     on)
-        printf "Enabling proxy... "
-        assu "networksetup -setsocksfirewallproxy Wi-Fi '$host' $port && networksetup -setsocksfirewallproxystate Wi-Fi on"
-        echo "✓"
+        if is_enabled; then
+            echo "Already enabled."
+            exit 1
+        else
+            printf "Enabling proxy... "
+            assu "networksetup -setsocksfirewallproxy Wi-Fi '$host' $port && networksetup -setsocksfirewallproxystate Wi-Fi on"
+            echo "✓"
+        fi
         ;;
     off)
-        printf "Resetting proxy settings... "
-        assu "networksetup -setsocksfirewallproxy Wi-Fi '' '' && networksetup -setsocksfirewallproxystate Wi-Fi off"
-        echo "✓"
+        if is_enabled; then
+            printf "Resetting proxy settings... "
+            assu "networksetup -setsocksfirewallproxy Wi-Fi '' '' && networksetup -setsocksfirewallproxystate Wi-Fi off"
+            echo "✓"
+        else
+            echo "Already disabled."
+            exit 1
+        fi
         ;;
     status)
         if is_enabled; then
