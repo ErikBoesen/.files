@@ -6,6 +6,11 @@ port=2114
 assu() { ssh root@localhost -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -t "$@" 2>/dev/null; }
 up  () { ping -c 1 -t 1 $1           >/dev/null; }
 
+is_enabled() {
+    assu "networksetup -getsocksfirewallproxy Wi-Fi" | grep "Enabled: Yes" >/dev/null
+    return $?
+}
+
 case $1 in
     on)
         printf "Enabling proxy... "
@@ -18,7 +23,7 @@ case $1 in
         echo "✓"
         ;;
     status)
-        if assu "networksetup -getsocksfirewallproxy Wi-Fi" | grep "Enabled: Yes" >/dev/null; then
+        if is_enabled; then
             echo "Proxy is enabled."
         else
             echo "Proxy is disabled."
