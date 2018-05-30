@@ -10,7 +10,7 @@ export PATH=$PATH:$HOME/src/moos-ivp/bin
 export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="erkbsn"
-plugins=(git)
+plugins=(git svn)
 . $ZSH/oh-my-zsh.sh
 
 alias burn="git clone https://github.com/ErikBoesen/burn ~/burn; ~/burn/burn.sh"
