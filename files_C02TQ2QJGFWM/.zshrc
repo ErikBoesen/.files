@@ -26,5 +26,5 @@ function gorm {
     rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
 }
 
-function sudo { ssh root@localhost -T "export PATH=$PATH; cd "$(pwd)"; $@" }
+function sudo { ssh root@localhost -T "export PATH=$PATH; cd '$(pwd)'; $@" }
 function su   { ssh root@localhost -o LogLevel=QUIET }
