@@ -17,6 +17,7 @@ alias burn="git clone https://github.com/ErikBoesen/burn ~/burn; ~/burn/burn.sh"
 alias notes="cd ~/src/ibhlcs/notes && jupyter notebook"
 alias tc="texcount *.tex"
 alias texclean="rm *.{aux,bbl,blg,log,out,pdf,synctex.gz"
+alias gs="gst"
 
 function tba {
     curl -s "https://www.thebluealliance.com/api/v3/$1?X-TBA-Auth-Key=$TBAKEY"
