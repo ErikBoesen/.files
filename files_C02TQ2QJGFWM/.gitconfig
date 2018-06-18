@@ -7,4 +7,5 @@
 [commit]
 	gpgsign = true
 [core]
-	whitespace = warn
+    whitespace = warn
+    autocrlf = input
