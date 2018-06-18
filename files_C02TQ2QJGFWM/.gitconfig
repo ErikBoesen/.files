@@ -9,3 +9,4 @@
 [core]
     whitespace = warn
     autocrlf = input
+    excludesfile = ~/.gitignore
