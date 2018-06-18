@@ -10,3 +10,5 @@
     whitespace = warn
     autocrlf = input
     excludesfile = ~/.gitignore
+[color]
+    ui = auto
