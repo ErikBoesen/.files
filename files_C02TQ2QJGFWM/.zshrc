@@ -6,6 +6,7 @@ export GOPATH=/usr/local/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/texlive/2017/bin/x86_64-darwin
 export PATH=$PATH:$HOME/moos-ivp/bin
+export PATH=$PATH:$HOME/moos-ivp-erik/bin
 
 export ZSH=$HOME/.oh-my-zsh
 
