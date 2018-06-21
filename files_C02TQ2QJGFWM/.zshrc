@@ -19,6 +19,7 @@ alias notes="cd ~/src/ibhlcs/notes && jupyter notebook"
 alias tc="texcount *.tex"
 alias texclean="rm *.{aux,bbl,blg,log,out,pdf,synctex.gz"
 alias gs="gst"
+alias vim="/usr/local/bin/vim"
 
 function tba {
     curl -s "https://www.thebluealliance.com/api/v3/$1?X-TBA-Auth-Key=$TBAKEY"
