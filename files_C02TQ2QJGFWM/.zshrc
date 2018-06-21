@@ -2,7 +2,7 @@
 
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin
 PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
-GOPATH=/usr/local/go
+export GOPATH=/usr/local/go
 PATH=$PATH:$GOPATH/bin
 PATH=$PATH:/usr/local/texlive/2017/bin/x86_64-darwin
 PATH=$PATH:$HOME/moos-ivp/bin
