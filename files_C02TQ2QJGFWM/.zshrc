@@ -1,12 +1,13 @@
 . $HOME/.private.sh
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin
-export PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
-export GOPATH=/usr/local/go
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:/usr/local/texlive/2017/bin/x86_64-darwin
-export PATH=$PATH:$HOME/moos-ivp/bin
-export PATH=$PATH:$HOME/moos-ivp-erik/bin
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin
+PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
+GOPATH=/usr/local/go
+PATH=$PATH:$GOPATH/bin
+PATH=$PATH:/usr/local/texlive/2017/bin/x86_64-darwin
+PATH=$PATH:$HOME/moos-ivp/bin
+PATH=$PATH:$HOME/moos-ivp-erik/bin
+export PATH
 
 export ZSH=$HOME/.oh-my-zsh
 
