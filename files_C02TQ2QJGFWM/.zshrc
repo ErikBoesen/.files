@@ -20,6 +20,7 @@ alias notes="cd ~/src/ibhlcs/notes && jupyter notebook"
 alias tc="texcount *.tex"
 alias texclean="rm *.{aux,bbl,blg,log,out,pdf,synctex.gz"
 alias gs="gst"
+alias lockscreen="sudo defaults remove /Library/Preferences/com.apple.loginwindow LoginwindowText"
 
 alias vim="/usr/local/bin/vim"
 alias ls="ls -GF"
