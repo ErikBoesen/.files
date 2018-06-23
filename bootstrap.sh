@@ -4,6 +4,12 @@ CYAN="\e[36m"
 GREEN="\e[32m"
 RESET="\e[0m"
 
+if ! type realpath >/dev/null; then
+    function realpath {
+        python -c "import os; print(os.path.realpath('$1'))"
+    }
+fi
+
 function install {
     dir="$1"
     for f in $(cd $dir; find . -type f); do
