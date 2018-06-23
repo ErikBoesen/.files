@@ -7,11 +7,11 @@ if [[ $(uname) == "Linux"  ]]; then
 fi
 
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
-if $mac; then
+if [[ $mac == true ]]; then
     PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
     PATH=$PATH:/usr/local/texlive/2017/bin/x86_64-darwin
     PATH=$PATH:$HOME/moos-ivp/bin:$HOME/moos-ivp-erik/bin
-elif $linux; then
+elif [[ $linux == true ]]; then
     PATH=$PATH:$HOME/.gem/ruby/2.4.0/bin
 fi
 
@@ -26,7 +26,7 @@ plugins=(git)
 
 umask 077
 
-if $mac; then
+if [[ $mac == true ]]; then
     alias burn="git clone https://github.com/ErikBoesen/burn ~/burn; ~/burn/burn.sh"
     alias notes="cd ~/src/ibhlcs/notes && jupyter notebook"
     alias tc="texcount *.tex"
@@ -43,10 +43,10 @@ if $mac; then
 
     function sudo { ssh root@localhost -T "export PATH=$PATH; cd '$(pwd)'; $@" }
     function su   { ssh root@localhost -o LogLevel=QUIET }
-elif $linux; then
+elif [[ $linux == true ]]; then
     alias torrent="transmission-cli"
 
-    if $server; then
+    if [[ $server == true ]]; then
         alias update="tmux new-session -s updates bash -c 'sudo zypper update -y && rm ~/.update' >/dev/null"
         alias leoupd="cd ~/leopard;git pull;zip -r ~/www/leopard.zip ."
 
