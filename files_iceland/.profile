@@ -1,5 +1,4 @@
-# TODO: Give full path
-PATH=$PATH:/opt/local/bin
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin:/opt/local/bin
 export PATH
 
 alias g="git"
