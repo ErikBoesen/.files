@@ -11,3 +11,5 @@ alias gst="git status"
 alias gs="git status"
 alias gd="git diff"
 alias glo="git log --oneline --decorate"
+
+alias ls="ls -G"
