@@ -6,22 +6,18 @@ if [[ $(uname) -eq "Linux"  ]]; then
     [[ $(hostname) -eq "juno" ]] && server=true
 fi
 
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
 if $mac; then
-    PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin
     PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
-    export GOPATH=/usr/local/go
-    PATH=$PATH:$GOPATH/bin
     PATH=$PATH:/usr/local/texlive/2017/bin/x86_64-darwin
-    PATH=$PATH:$HOME/moos-ivp/bin
-    PATH=$PATH:$HOME/moos-ivp-erik/bin
-    export PATH
+    PATH=$PATH:$HOME/moos-ivp/bin:$HOME/moos-ivp-erik/bin
 elif $linux; then
-    PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
-    PATH=$PATH:/home/erik/.gem/ruby/2.4.0/bin
-    export GOPATH=/usr/local/go
-    PATH=$PATH:$GOPATH/bin
-    export PATH
+    PATH=$PATH:$HOME/.gem/ruby/2.4.0/bin
 fi
+
+export GOPATH=/usr/local/go
+PATH=$PATH:$GOPATH/bin
+export PATH
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="erkbsn"
@@ -48,17 +44,15 @@ if $mac; then
     function sudo { ssh root@localhost -T "export PATH=$PATH; cd '$(pwd)'; $@" }
     function su   { ssh root@localhost -o LogLevel=QUIET }
 elif $linux; then
-    if $server; then
-        alias torrent="transmission-cli"
-        alias http="sudo python3 -m http.server 80"
+    alias torrent="transmission-cli"
 
+    if $server; then
         alias update="tmux new-session -s updates bash -c 'sudo zypper update -y && rm ~/.update' >/dev/null"
         alias leoupd="cd ~/leopard;git pull;zip -r ~/www/leopard.zip ."
 
         printf '\r\n'
         echo "  $fg[cyan]J$fg[green] U$fg[yellow] N$fg[red] O 🚀$reset_color"
         echo "  $fg[blue]$(uptime | awk '{print $3 "d " substr($5, 1, length($5)-1)}').$reset_color"
-
     else
         alias update="tmux new-session -s updates bash -c 'sudo pacman -Syu --noconfirm && rm ~/.update' >/dev/null"
         alias suspend="systemctl suspend"
@@ -67,8 +61,6 @@ elif $linux; then
         alias pbpaste="xsel --clipboard --output"
         alias vup="pamixer --increase"
         alias vdown="pamixer --decrease"
-
-        alias torrent="transmission-cli"
 
         alsi -l
     fi
