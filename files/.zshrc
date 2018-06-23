@@ -37,17 +37,13 @@ if $mac; then
 
     alias vim="/usr/local/bin/vim"
     alias ls="ls -GF"
-    function tba {
-        curl -s "https://www.thebluealliance.com/api/v3/$1?X-TBA-Auth-Key=$TBAKEY"
-        echo
-    }
+
     function gorm {
         rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
     }
 
     function sudo { ssh root@localhost -T "export PATH=$PATH; cd '$(pwd)'; $@" }
     function su   { ssh root@localhost -o LogLevel=QUIET }
-
 elif $linux; then
     alias update="tmux new-session -s updates bash -c 'sudo pacman -Syu --noconfirm && rm ~/.update' >/dev/null"
     alias suspend="systemctl suspend"
@@ -59,11 +55,6 @@ elif $linux; then
 
     alias torrent="transmission-cli"
 
-    function tba {
-        curl -s "https://www.thebluealliance.com/api/v3/$1?X-TBA-Auth-Key=$TBAKEY"
-        echo
-    }
-
     alsi -l
 
     if [ -e $HOME/.update ]; then
@@ -74,3 +65,8 @@ elif $linux; then
     	fi
     fi
 fi
+
+function tba {
+    curl -s "https://www.thebluealliance.com/api/v3/$1?X-TBA-Auth-Key=$TBAKEY"
+    echo
+}
