@@ -1,0 +1,10 @@
+[user]
+	signingkey = 4A8A2A1A
+	name = ErikBoesen
+	email = me@erikboesen.com
+[credential]
+	helper = store
+[commit]
+	gpgsign = true
+[core]
+	excludesfile = /Users/boesen/.gitignore
