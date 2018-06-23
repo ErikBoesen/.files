@@ -1,9 +1,9 @@
 . $HOME/.private.sh
 
-[[ $(uname) -eq "Darwin" ]] && mac=true
-if [[ $(uname) -eq "Linux"  ]]; then
+[[ $(uname) == "Darwin" ]] && mac=true
+if [[ $(uname) == "Linux"  ]]; then
     linux=true
-    [[ $(hostname) -eq "juno" ]] && server=true
+    [[ $(hostname) == "juno" ]] && server=true
 fi
 
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
