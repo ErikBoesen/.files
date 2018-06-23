@@ -31,6 +31,6 @@ function install {
 }
 
 dfroot="$(dirname $(realpath $0))"
-install $dfroot/files
+install $dfroot/global
 [[ -e $dfroot/platforms/$(uname) ]] && install $dfroot/platforms/$(uname)
-[[ -e $dfroot/files_$(hostname) ]] && install $dfroot/files_$(hostname)
+[[ -e $dfroot/hosts/$(hostname) ]] && install $dfroot/hosts/$(hostname)
