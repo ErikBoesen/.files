@@ -1,5 +1,6 @@
-# TODO: Build PATH
-#export PATH
+# TODO: Give full path
+PATH=$PATH:/opt/local/bin
+export PATH
 
 alias g="git"
 alias ga="git add"
