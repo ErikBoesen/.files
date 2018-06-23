@@ -28,7 +28,15 @@ plugins=(git)
 umask 077
 
 if $mac; then
+    alias burn="git clone https://github.com/ErikBoesen/burn ~/burn; ~/burn/burn.sh"
+    alias notes="cd ~/src/ibhlcs/notes && jupyter notebook"
+    alias tc="texcount *.tex"
+    alias texclean="rm *.{aux,bbl,blg,log,out,pdf,synctex.gz"
+    alias gs="gst"
+    alias lockscreen="sudo defaults remove /Library/Preferences/com.apple.loginwindow LoginwindowText"
 
+    alias vim="/usr/local/bin/vim"
+    alias ls="ls -GF"
 else
     alias update="tmux new-session -s updates bash -c 'sudo pacman -Syu --noconfirm && rm ~/.update' >/dev/null"
     alias suspend="systemctl suspend"
