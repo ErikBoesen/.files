@@ -1,6 +1,8 @@
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin:/opt/local/bin
 export PATH
 
+PS1="\e[32m\W \e[34m$\e[0m "
+
 alias g="git"
 alias ga="git add"
 alias gc="git commit"
