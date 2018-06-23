@@ -1,7 +1,10 @@
 . $HOME/.private.sh
 
 [[ $(uname) -eq "Darwin" ]] && mac=true
-[[ $(uname) -eq "Linux"  ]] && linux=true
+if [[ $(uname) -eq "Linux"  ]]; then
+    linux=true
+    [[ $(hostname) -eq "juno" ]] && server=true
+fi
 
 if $mac; then
     PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin
@@ -45,24 +48,37 @@ if $mac; then
     function sudo { ssh root@localhost -T "export PATH=$PATH; cd '$(pwd)'; $@" }
     function su   { ssh root@localhost -o LogLevel=QUIET }
 elif $linux; then
-    alias update="tmux new-session -s updates bash -c 'sudo pacman -Syu --noconfirm && rm ~/.update' >/dev/null"
-    alias suspend="systemctl suspend"
+    if $server; then
+        alias torrent="transmission-cli"
+        alias http="sudo python3 -m http.server 80"
 
-    alias pbcopy="xsel --clipboard --input"
-    alias pbpaste="xsel --clipboard --output"
-    alias vup="pamixer --increase"
-    alias vdown="pamixer --decrease"
+        alias update="tmux new-session -s updates bash -c 'sudo zypper update -y && rm ~/.update' >/dev/null"
+        alias leoupd="cd ~/leopard;git pull;zip -r ~/www/leopard.zip ."
 
-    alias torrent="transmission-cli"
+        printf '\r\n'
+        echo "  $fg[cyan]J$fg[green] U$fg[yellow] N$fg[red] O 🚀$reset_color"
+        echo "  $fg[blue]$(uptime | awk '{print $3 "d " substr($5, 1, length($5)-1)}').$reset_color"
 
-    alsi -l
+    else
+        alias update="tmux new-session -s updates bash -c 'sudo pacman -Syu --noconfirm && rm ~/.update' >/dev/null"
+        alias suspend="systemctl suspend"
+
+        alias pbcopy="xsel --clipboard --input"
+        alias pbpaste="xsel --clipboard --output"
+        alias vup="pamixer --increase"
+        alias vdown="pamixer --decrease"
+
+        alias torrent="transmission-cli"
+
+        alsi -l
+    fi
 
     if [ -e $HOME/.update ]; then
-    	printf "Check for updates? $fg[green](y):$reset_color "
-    	read response
-    	if [[ "$response" =~ ^[yY]?$ ]]; then
-    		update
-    	fi
+        printf "Check for updates? $fg[green](y):$reset_color "
+        read response
+        if [[ "$response" =~ ^[yY]?$ ]]; then
+            update
+        fi
     fi
 fi
 
