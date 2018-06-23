@@ -12,7 +12,7 @@ if $mac; then
     PATH=$PATH:$HOME/moos-ivp/bin
     PATH=$PATH:$HOME/moos-ivp-erik/bin
     export PATH
-else
+elif $linux; then
     PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
     PATH=$PATH:/home/erik/.gem/ruby/2.4.0/bin
     export GOPATH=/usr/local/go
@@ -37,7 +37,18 @@ if $mac; then
 
     alias vim="/usr/local/bin/vim"
     alias ls="ls -GF"
-else
+    function tba {
+        curl -s "https://www.thebluealliance.com/api/v3/$1?X-TBA-Auth-Key=$TBAKEY"
+        echo
+    }
+    function gorm {
+        rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
+    }
+
+    function sudo { ssh root@localhost -T "export PATH=$PATH; cd '$(pwd)'; $@" }
+    function su   { ssh root@localhost -o LogLevel=QUIET }
+
+elif $linux; then
     alias update="tmux new-session -s updates bash -c 'sudo pacman -Syu --noconfirm && rm ~/.update' >/dev/null"
     alias suspend="systemctl suspend"
 
