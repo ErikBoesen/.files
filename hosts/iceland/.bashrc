@@ -19,6 +19,9 @@ function    cd { builtin    cd "$@"; chpwd; }
 function pushd { builtin pushd "$@"; chpwd; }
 function  popd { builtin  popd "$@"; chpwd; }
 
+shopt -s histappend
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
 alias g="git"
 alias ga="git add"
 alias gc="git commit"
