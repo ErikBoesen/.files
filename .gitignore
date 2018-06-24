@@ -1,1 +1,4 @@
 .DS_Store
+
+# Since these files are edited frequently, adding must be forced.
+.atom/config.cson
