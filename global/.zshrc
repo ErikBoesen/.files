@@ -74,6 +74,7 @@ elif [[ $linux == true ]]; then
 fi
 
 alias gs="gst"
+alias gp="gp >/dev/null &"
 
 function tba {
     curl -s "https://www.thebluealliance.com/api/v3/$1?X-TBA-Auth-Key=$TBAKEY"
