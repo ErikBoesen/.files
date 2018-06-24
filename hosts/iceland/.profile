@@ -5,12 +5,21 @@ function git_prompt {
     if [[ -d .git ]] || git rev-parse --git-dir > /dev/null 2>&1; then
         printf " \e[36m∑:[$(git rev-parse --abbrev-ref HEAD)]\e[0m"
         if ! [[ -z $(git status --porcelain) ]]; then
-            printf " \e[33m△\e[0m"
+            printf ' \e[33m△\e[0m'
         fi
     fi
 }
+# TODO: Broken
+function status_prompt {
+    if [[ $? == 0 ]]; then
+        printf '\e[32m'
+    else
+        printf '\e[31m'
+    fi
+    printf '$\e[0m'
+}
 function chpwd {    
-    PS1='\[\e[32m\]\W\[\e[0m\]$(git_prompt) \[\e[34m\]\$\[\e[0m\] '
+    PS1='\[\e[34m\]\W\[\e[0m\]$(git_prompt) $(status_prompt) '
 }
 chpwd
 
