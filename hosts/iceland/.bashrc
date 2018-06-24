@@ -1,4 +1,5 @@
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin:/opt/local/bin
+PATH=$PATH:$HOME/moos-ivp/bin:$HOME/moos-ivp-erik/bin
 export PATH
 
 function git_prompt {
