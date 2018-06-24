@@ -9,17 +9,8 @@ function git_prompt {
         fi
     fi
 }
-# TODO: Broken
-function status_prompt {
-    if [[ $? == 0 ]]; then
-        printf '\e[32m'
-    else
-        printf '\e[31m'
-    fi
-    printf '$\e[0m'
-}
 function chpwd {    
-    PS1='\[\e[34m\]\W\[\e[0m\]$(git_prompt) $(status_prompt) '
+    PS1='\[\e[32m\]\W\[\e[0m\]$(git_prompt) \e[34m\$\e[0m '
 }
 chpwd
 
