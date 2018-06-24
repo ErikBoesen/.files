@@ -1,0 +1,5 @@
+[user]
+	email = me@erikboesen.com
+	name = ErikBoesen
+[credential]
+	helper = store
