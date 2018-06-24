@@ -19,6 +19,7 @@ function    cd { builtin    cd "$@"; chpwd; }
 function pushd { builtin pushd "$@"; chpwd; }
 function  popd { builtin  popd "$@"; chpwd; }
 
+# Instantly append commands to history
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
