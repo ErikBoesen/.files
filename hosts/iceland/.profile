@@ -1,7 +1,22 @@
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin:/opt/local/bin
 export PATH
 
-PS1="\e[32m\W \e[34m$\e[0m "
+function git_prompt {
+    if [[ -d .git ]]; then
+        printf " \e[36m∑:[$(git rev-parse --abbrev-ref HEAD)]\e[0m"
+        if ! git diff-index --quiet HEAD --; then
+            printf " \e[33m△\e[0m"
+        fi
+    fi
+}
+function chpwd {    
+    PS1="\e[32m\W\e[0m$(git_prompt) \e[34m\$\e[0m "
+}
+chpwd
+
+function    cd { builtin    cd "$@"; chpwd; }
+function pushd { builtin pushd "$@"; chpwd; }
+function  popd { builtin  popd "$@"; chpwd; }
 
 alias g="git"
 alias ga="git add"
