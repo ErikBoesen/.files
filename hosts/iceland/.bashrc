@@ -13,11 +13,7 @@ function git_prompt {
 function chpwd {    
     PS1="\[\e[32m\]\W\[\e[0m\]$(git_prompt) \[\e[34m\]\$\[\e[0m\] "
 }
-chpwd
-
-function    cd { builtin    cd "$@"; chpwd; }
-function pushd { builtin pushd "$@"; chpwd; }
-function  popd { builtin  popd "$@"; chpwd; }
+PROMPT_COMMAND="chpwd;$PROMPT_COMMAND"
 
 # Instantly append commands to history
 shopt -s histappend
