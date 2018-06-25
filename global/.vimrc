@@ -17,6 +17,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " List plugins
+Plugin 'HeroCC/moos-vim-syntax'
 
 call vundle#end()
 filetype plugin indent on
