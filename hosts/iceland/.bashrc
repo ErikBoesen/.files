@@ -11,7 +11,7 @@ function git_prompt {
     fi
 }
 function chpwd {    
-    PS1='\[\e[32m\]\W\[\e[0m\]$(git_prompt) \e[34m\$\e[0m '
+    PS1='\[\e[32m\W\[\e[0m$(git_prompt) \[\e[34m\$\[\e[0m '
 }
 chpwd
 
