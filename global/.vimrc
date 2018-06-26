@@ -29,3 +29,5 @@ filetype plugin indent on
 
 let g:sierra_Midnight = 1
 colorscheme sierra
+
+map <F7> mzgg=G`z " Reindent entire file
