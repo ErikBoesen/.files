@@ -20,6 +20,7 @@ function git_prompt {
 function chpwd {    
     PS1="\[\e[32m\]\W\[\e[0m\]$(git_prompt) \[\e[34m\]\$\[\e[0m\] "
 }
+PROMPT_COMMAND=""
 PROMPT_COMMAND="chpwd;$PROMPT_COMMAND"
 
 # Instantly append commands to history
