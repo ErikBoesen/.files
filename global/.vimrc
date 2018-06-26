@@ -19,9 +19,9 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'HeroCC/moos-vim-syntax'
 " Themes
-Plugin 'ajmwagar/vim-deus'
+Plugin 'dikiaap/minimalist'
 
 call vundle#end()
 filetype plugin indent on
 
-colors deus
+colors minimalist
