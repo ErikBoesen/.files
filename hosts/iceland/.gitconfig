@@ -8,3 +8,5 @@
 	gpgsign = true
 [core]
 	excludesfile = /Users/boesen/.gitignore
+[alias]
+	gud = clone https://github.com/jezen/is-thirteen
