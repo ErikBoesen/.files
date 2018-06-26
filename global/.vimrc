@@ -24,6 +24,4 @@ Plugin 'ajmwagar/vim-deus'
 call vundle#end()
 filetype plugin indent on
 
-set t_Co=256
 colors deus
-set background=dark
