@@ -20,10 +20,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
 Plugin 'HeroCC/moos-vim-syntax'
-" Themes
-Plugin 'dikiaap/minimalist'
+" Theme
+Plugin 'AlessandroYorba/Sierra'
 
 call vundle#end()
 filetype plugin indent on
 
-colors minimalist
+let g:sierra_Midnight = 1
+colorscheme sierra
