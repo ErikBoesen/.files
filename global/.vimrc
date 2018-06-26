@@ -8,6 +8,8 @@ set shiftwidth=4
 set expandtab
 set clipboard=unnamed
 set number
+set backspace=2
+
 
 " --- Vundle ---
 set nocompatible
