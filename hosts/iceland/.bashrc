@@ -26,8 +26,8 @@ alias gp="git push"
 alias gl="git pull"
 alias gb="git branch"
 alias gco="git checkout"
-alias gst="git status -s" # ZSH alias does
-alias gs="git status -s"  # not use -s.
+alias gst="git status -s" # Standard ZSH alias doesn't use -s
+alias gs="git status -s" # Account for missing t key
 alias gd="git diff"
 alias glo="git log --oneline --decorate"
 
