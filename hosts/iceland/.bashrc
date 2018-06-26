@@ -2,23 +2,24 @@ PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin:/o
 PATH=$PATH:$HOME/moos-ivp/bin:$HOME/moos-ivp-erik/bin
 export PATH
 
-function git_prompt {
+function dir_prompt {
     if [[ -d .git ]] || git rev-parse --git-dir > /dev/null 2>&1; then
-        printf "\[\e[36m\]:\[\e[4m\]"
+        printf "\[\e[32;4m\]"
+        printf "\W"
         branch=$(git rev-parse --abbrev-ref HEAD)
-        if [[ $branch == "master" ]]; then # TODO: Support default branches not named master
-            printf "π"
-        else
-            printf "$branch"
+        if ! [[ $branch == "master" ]]; then # TODO: Support default branches not named master
+            printf "\[\e[0;36m\]:$branch"
         fi
         printf "\[\e[0m\]"
         if ! [[ -z $(git status --porcelain) ]]; then
             printf " \[\e[33m\]△\[\e[0m\]"
         fi
+    else
+        printf "\[\e[32m\]\W\[\e[0m\]"
     fi
 }
 function chpwd {    
-    PS1="\[\e[32m\]\W\[\e[0m\]$(git_prompt) \[\e[34m\]\$\[\e[0m\] "
+    PS1="$(dir_prompt) \[\e[34m\]\$\[\e[0m\] "
 }
 PROMPT_COMMAND=""
 PROMPT_COMMAND="chpwd;$PROMPT_COMMAND"
