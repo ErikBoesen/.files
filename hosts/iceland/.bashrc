@@ -2,6 +2,9 @@ PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin:/o
 PATH=$PATH:$HOME/moos-ivp/bin:$HOME/moos-ivp-erik/bin:$HOME/moos-ivp-aquaticus-aro/bin
 export PATH
 
+# Aquaticus
+export LIBRARY_PATH=/opt/local/lib
+
 function dir_prompt {
     if [[ -d .git ]] || git rev-parse --git-dir > /dev/null 2>&1; then
         printf "\[\e[32;4m\]"
