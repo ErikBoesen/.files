@@ -16,8 +16,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-" List plugins
+" Plugins
 Plugin 'HeroCC/moos-vim-syntax'
+" Themes
+Plugin 'ajmwagar/vim-deus'
 
 call vundle#end()
 filetype plugin indent on
+
+set t_Co=256
+colors deus
+set background=dark
