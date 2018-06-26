@@ -4,7 +4,7 @@ export PATH
 
 function git_prompt {
     if [[ -d .git ]] || git rev-parse --git-dir > /dev/null 2>&1; then
-        printf "\[\e[36m\]:"
+        printf "\[\e[36m\]:\[\e[4m\]"
         branch=$(git rev-parse --abbrev-ref HEAD)
         if [[ $branch == "master" ]]; then # TODO: Support default branches not named master
             printf "π"
