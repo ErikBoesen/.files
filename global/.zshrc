@@ -35,7 +35,7 @@ if [[ $mac == true ]]; then
     alias rmnetconf="sudo rm /Library/Preferences/SystemConfiguration/{com.apple.airport.preferences.plist,com.apple.network.eapolclient.configuration.plist,com.apple.wifi.message-tracer.plist,NetworkInterfaces.plist,preferences.plist}"
 
     alias vim="/usr/local/bin/vim"
-    alias ls="ls -GF"
+    alias ls="ls -G"
 
     function gorm {
         rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
