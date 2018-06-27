@@ -32,6 +32,7 @@ if [[ $mac == true ]]; then
     alias tc="texcount *.tex"
     alias texclean="rm *.{aux,bbl,blg,log,out,pdf,synctex.gz"
     alias lockscreen="sudo defaults remove /Library/Preferences/com.apple.loginwindow LoginwindowText"
+    alias rmnetconf="sudo rm com.apple.airport.preferences.plist com.apple.network.eapolclient.configuration.plist com.apple.wifi.message-tracer.plist NetworkInterfaces.plist preferences.plist"
 
     alias vim="/usr/local/bin/vim"
     alias ls="ls -GF"
