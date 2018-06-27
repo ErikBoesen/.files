@@ -30,5 +30,6 @@ filetype plugin indent on
 
 let g:sierra_Midnight = 1
 colorscheme sierra
+hi Normal guibg=NONE ctermbg=NONE
 
 map <F7> mzgg=G`z " Reindent entire file
