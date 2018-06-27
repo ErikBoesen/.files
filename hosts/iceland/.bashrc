@@ -44,3 +44,4 @@ alias gd="git diff"
 alias glo="git log --oneline --decorate"
 
 alias ls="ls -G"
+alias tmux="TERM=screen-256color-bce tmux"
