@@ -2,3 +2,5 @@
 "\e[B": history-search-forward
 "\eOA": history-previous-history
 "\eOA": history-next-history
+
+set colored-stats on
