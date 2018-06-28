@@ -43,5 +43,7 @@ alias gs="git status -s" # Account for missing t key
 alias gd="git diff"
 alias glo="git log --oneline --decorate"
 
+alias cdaq="cd ~/moos-ivp-aquaticus-aro/missions/aquaticus1.2.1"
+
 alias ls="ls -G"
 alias dump="lynx -width=$(tput cols) --dump"
