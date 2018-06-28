@@ -4,7 +4,7 @@ export PATH
 
 # Aquaticus
 export LIBRARY_PATH=/opt/local/lib
-export IVP_BEHAVIOR_DIRS=$HOME/moos-ivp/lib:$HOME/moos-ivp-colregs/lib:$HOME/moos-ivp-aquaticus/trunk/lib
+export IVP_BEHAVIOR_DIRS=$HOME/moos-ivp/lib:$HOME/moos-ivp-aquaticus-aro/lib
 
 function dir_prompt {
     if [[ -d .git ]] || git rev-parse --git-dir > /dev/null 2>&1; then
