@@ -32,6 +32,9 @@ PROMPT_COMMAND="chpwd;$PROMPT_COMMAND"
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
+# Use vi-style line editing
+set -o vi
+
 alias g="git"
 alias ga="git add"
 alias gc="git commit"
