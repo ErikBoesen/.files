@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+BG_RED="\e[41m"
+RESET="\e[0m"
+
+printf "Evan${RESET}\n"
+printf "Felix${RESET}\n"
+printf "Gus${RESET}\n"
+printf "Hal${RESET}\n"
+printf "Ida${RESET}\n"
+printf "Jing${RESET}\n"
+printf "Kirk${RESET}\n"
