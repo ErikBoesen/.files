@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+BG_WHITE="\e[107m"
+BG_BLACK="\e[40m"
 BG_RED="\e[41m"
 BG_ORANGE="\e[48;5;202m"
 BG_YELLOW="\e[43m"
