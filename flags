@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
 BG_RED="\e[41m"
+BG_ORANGE="\e[48;5;202m"
+BG_YELLOW="\e[43m"
+BG_GREEN="\e[42m"
+BG_BLUE="\e[44m"
+BG_MAGENTA="\e[45m"
 RESET="\e[0m"
 
 printf "Evan${RESET}\n"
