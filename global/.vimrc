@@ -33,4 +33,7 @@ let g:sierra_Midnight = 1
 colorscheme sierra
 hi Normal guibg=NONE ctermbg=NONE
 
+" Remove trailing whitespace on write
+autocmd BufWritePre * %s/\s\+$//e
+
 map <F7> mzgg=G`z " Reindent entire file
