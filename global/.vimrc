@@ -25,7 +25,8 @@ Plugin 'lervag/vimtex'
 Plugin 'darfink/vim-plist'
 " Theme
 Plugin 'AlessandroYorba/Sierra'
-Plugin 'marciomazza/vim-brogrammer-theme'
+"Plugin 'marciomazza/vim-brogrammer-theme'
+Plugin 'ErikBoesen/vim-brogrammer-theme'
 
 call vundle#end()
 filetype plugin indent on
