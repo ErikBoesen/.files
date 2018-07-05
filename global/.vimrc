@@ -25,12 +25,14 @@ Plugin 'lervag/vimtex'
 Plugin 'darfink/vim-plist'
 " Theme
 Plugin 'AlessandroYorba/Sierra'
+Plugin 'marciomazza/vim-brogrammer-theme'
 
 call vundle#end()
 filetype plugin indent on
 
 let g:sierra_Midnight = 1
-colorscheme sierra
+"colorscheme sierra
+colorscheme brogrammer
 hi Normal guibg=NONE ctermbg=NONE
 
 " Remove trailing whitespace on write
