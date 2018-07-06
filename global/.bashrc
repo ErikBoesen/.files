@@ -22,7 +22,7 @@ function dir_prompt {
         printf "\[\e[32m\]\W\[\e[0m\]"
     fi
 }
-function chpwd {    
+function chpwd {
     PS1="$(dir_prompt) \[\e[34m\]\$\[\e[0m\] "
 }
 PROMPT_COMMAND=""
@@ -31,9 +31,6 @@ PROMPT_COMMAND="chpwd;$PROMPT_COMMAND"
 # Instantly append commands to history
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
-
-# Use vi-style line editing
-set -o vi
 
 alias g="git"
 alias ga="git add"
