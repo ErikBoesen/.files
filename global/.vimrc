@@ -22,6 +22,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'HeroCC/moos-vim-syntax'
 Plugin 'lervag/vimtex'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'darfink/vim-plist'
 " Theme
 Plugin 'AlessandroYorba/Sierra'
