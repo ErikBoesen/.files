@@ -33,7 +33,9 @@ filetype plugin indent on
 
 let g:sierra_Midnight = 1
 "colorscheme sierra
-colorscheme brogrammer
+"colorscheme brogrammer
+colorscheme victis
+set termguicolors
 hi Normal guibg=NONE ctermbg=NONE
 
 " Remove trailing whitespace on write
