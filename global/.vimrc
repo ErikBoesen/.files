@@ -25,17 +25,17 @@ Plugin 'lervag/vimtex'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'darfink/vim-plist'
 " Theme
-Plugin 'AlessandroYorba/Sierra'
+"Plugin 'AlessandroYorba/Sierra'
 "Plugin 'marciomazza/vim-brogrammer-theme'
 Plugin 'ErikBoesen/vim-brogrammer-theme'
 
 call vundle#end()
 filetype plugin indent on
 
-let g:sierra_Midnight = 1
+"let g:sierra_Midnight = 1
 "colorscheme sierra
-"colorscheme brogrammer
-colorscheme victis
+colorscheme brogrammer
+"colorscheme victis
 set termguicolors
 hi Normal guibg=NONE ctermbg=NONE
 
