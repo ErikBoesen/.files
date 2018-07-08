@@ -1,5 +1,6 @@
 PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
 PATH=$PATH:$HOME/moos-ivp/bin:$HOME/moos-ivp-erik/bin:$HOME/moos-ivp-aquaticus-aro/bin
+PATH=$PATH:$HOME/Qt/5.11.1/clang_64/bin
 export PATH
 
 # Aquaticus
