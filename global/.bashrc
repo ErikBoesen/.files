@@ -49,7 +49,7 @@ alias cdaq="cd ~/moos-ivp-aquaticus-aro/missions/aquaticus1.2.1"
 
 alias ls="ls -G"
 alias dump="lynx -width=$(tput cols) --dump"
-alias sleep="pmset sleepnow"
+alias sl="pmset sleepnow"
 
 printf "\e[46;30m"
 if (( $(date +%H) < 12 )); then
