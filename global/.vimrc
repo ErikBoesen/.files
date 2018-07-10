@@ -25,9 +25,9 @@ Plugin 'lervag/vimtex'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'darfink/vim-plist'
 " Theme
-"Plugin 'AlessandroYorba/Sierra'
-"Plugin 'marciomazza/vim-brogrammer-theme'
-Plugin 'ErikBoesen/vim-brogrammer-theme'
+Plugin 'AlessandroYorba/Sierra'
+Plugin 'marciomazza/vim-brogrammer-theme'
+Plugin 'frc1418/vim-syntax-victis'
 
 call vundle#end()
 filetype plugin indent on
@@ -36,8 +36,8 @@ filetype plugin indent on
 "colorscheme sierra
 colorscheme brogrammer
 "colorscheme victis
-set termguicolors
-hi Normal guibg=NONE ctermbg=NONE
+"set termguicolors
+"hi Normal guibg=NONE ctermbg=NONE
 
 " Remove trailing whitespace on write
 autocmd BufWritePre * %s/\s\+$//e

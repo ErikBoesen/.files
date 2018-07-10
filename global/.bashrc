@@ -50,7 +50,7 @@ alias cdaq="cd ~/moos-ivp-aquaticus-aro/missions/aquaticus1.2.1"
 alias ls="ls -G"
 alias dump="lynx -width=$(tput cols) --dump"
 
-printf "\e[42;30m"
+printf "\e[46;30m"
 if (( $(date +%H) < 12 )); then
     printf "早上"
 else
