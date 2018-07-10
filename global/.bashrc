@@ -26,7 +26,7 @@ function dir_prompt {
 function chpwd {
     PS1="$(dir_prompt) \[\e[34m\]\$\[\e[0m\] "
 }
-PROMPT_COMMAND=""
+unset PROMPT_COMMAND
 PROMPT_COMMAND="chpwd;$PROMPT_COMMAND"
 
 # Instantly append commands to history
