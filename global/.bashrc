@@ -51,10 +51,4 @@ alias ls="ls -G"
 alias dump="lynx -width=$(tput cols) --dump"
 alias sl="pmset sleepnow"
 
-printf "\e[46;30m"
-if (( $(date +%H) < 12 )); then
-    printf "早上"
-else
-    printf "下午"
-fi
-printf "好\e[0m\n"
+printf "\e[46;30m欢迎\e[0m\n"
