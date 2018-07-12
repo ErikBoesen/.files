@@ -33,7 +33,6 @@ filetype plugin indent on
 
 colorscheme brogrammer
 "colorscheme victis
-"set termguicolors
 hi Normal guibg=NONE ctermbg=NONE
 
 " Remove trailing whitespace on write
