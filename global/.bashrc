@@ -7,6 +7,12 @@ export PATH
 export LIBRARY_PATH=/opt/local/lib
 export IVP_BEHAVIOR_DIRS=$HOME/moos-ivp/lib:$HOME/moos-ivp-erik/lib:$HOME/moos-ivp-aquaticus-aro/lib
 
+unset PROMPT_COMMAND
+
+# Instantly append commands to history
+shopt -s histappend
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
 function dir_prompt {
     if [[ -d .git ]] || git rev-parse --git-dir > /dev/null 2>&1; then
         printf "\[\e[34;4m\]"
@@ -34,12 +40,7 @@ function status_prompt {
 function chpwd {
     PS1="$(dir_prompt) $(status_prompt $1) "
 }
-unset PROMPT_COMMAND
 PROMPT_COMMAND="chpwd \$?;$PROMPT_COMMAND"
-
-# Instantly append commands to history
-shopt -s histappend
-PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 alias g="git"
 alias ga="git add"
