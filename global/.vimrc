@@ -25,7 +25,7 @@ Plugin 'lervag/vimtex'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'darfink/vim-plist'
 " Theme
-Plugin 'marciomazza/vim-brogrammer-theme'
+Plugin 'ErikBoesen/vim-brogrammer-theme'
 Plugin 'frc1418/vim-victis'
 
 call vundle#end()
