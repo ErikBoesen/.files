@@ -50,5 +50,6 @@ alias cdaq="cd ~/moos-ivp-aquaticus-aro/missions/aquaticus1.2.1"
 alias ls="ls -G"
 alias dump="lynx -width=$(tput cols) --dump"
 alias sl="pmset sleepnow"
+alias r=". ~/.bashrc"
 
 printf "\e[46;30m欢迎\e[0m\n"
