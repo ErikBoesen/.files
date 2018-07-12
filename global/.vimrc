@@ -26,7 +26,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'darfink/vim-plist'
 " Theme
 Plugin 'marciomazza/vim-brogrammer-theme'
-Plugin 'frc1418/vim-syntax-victis'
+Plugin 'frc1418/vim-victis'
 
 call vundle#end()
 filetype plugin indent on
