@@ -23,11 +23,19 @@ function dir_prompt {
         printf "\[\e[34m\]\W\[\e[0m\]"
     fi
 }
+function status_prompt {
+    if (( $1 == 0)); then
+        printf "\[\e[32m\]"
+    else
+        printf "\[\e[31m\]"
+    fi
+    printf "\$\[\e[0m\]"
+}
 function chpwd {
-    PS1="$(dir_prompt) \[\e[32m\]\$\[\e[0m\] "
+    PS1="$(dir_prompt) $(status_prompt $1) "
 }
 unset PROMPT_COMMAND
-PROMPT_COMMAND="chpwd;$PROMPT_COMMAND"
+PROMPT_COMMAND="chpwd \$?;$PROMPT_COMMAND"
 
 # Instantly append commands to history
 shopt -s histappend
@@ -51,5 +59,3 @@ alias ls="ls -G"
 alias dump="lynx -width=$(tput cols) --dump"
 alias sl="pmset sleepnow"
 alias r=". ~/.bashrc"
-
-printf "\e[46;30m欢迎\e[0m\n"
