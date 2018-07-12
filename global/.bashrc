@@ -60,4 +60,6 @@ alias ls="ls -G"
 alias dump="lynx -width=$(tput cols) --dump"
 alias sl="pmset sleepnow"
 alias r=". ~/.bashrc"
-alias nw="networksetup -setairportnetwork en1"
+function nw {
+    (networksetup -setairportnetwork en1 "$@" & 2>/dev/null)
+}
