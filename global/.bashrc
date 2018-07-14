@@ -95,8 +95,8 @@ elif [[ $linux == true ]]; then
         alias leoupd="cd ~/leopard;git pull;zip -r ~/www/leopard.zip ."
 
         printf '\r\n'
-        echo "  $fg[cyan]J$fg[green] U$fg[yellow] N$fg[red] O 🚀$reset_color"
-        echo "  $fg[blue]$(uptime | awk '{print $3 "d " substr($5, 1, length($5)-1)}').$reset_color"
+        echo "  \e[36mJ\e[32m U\e[33m N\e[31m O 🚀\e[0m"
+        echo "  \e[34m$(uptime | awk '{print $3 "d " substr($5, 1, length($5)-1)}').\e[0m"
     else
         alias update="tmux new-session -s updates bash -c 'sudo pacman -Syu --noconfirm && rm ~/.update' >/dev/null"
         alias suspend="systemctl suspend"
