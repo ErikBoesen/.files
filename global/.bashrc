@@ -72,6 +72,8 @@ function chpwd {
 PROMPT_COMMAND="chpwd \$?;$PROMPT_COMMAND"
 
 if [[ $mac == true ]]; then
+    alias ls="ls -G"
+    alias l="ls -Glah"
     alias burn="git clone https://github.com/ErikBoesen/burn ~/burn; ~/burn/burn.sh"
     alias notes="cd ~/src/ibhlcs/notes && jupyter notebook"
     alias tc="texcount *.tex"
@@ -88,6 +90,8 @@ if [[ $mac == true ]]; then
     #function sudo { ssh root@localhost -T "export PATH=$PATH; cd '$(pwd)'; '$@'" }
     #function su   { ssh root@localhost -o LogLevel=QUIET }
 elif [[ $linux == true ]]; then
+    alias ls="ls --color=auto"
+    alias l="ls -lah --color=auto"
     alias torrent="transmission-cli"
 
     if [[ $server == true ]]; then
@@ -131,8 +135,6 @@ alias glo="git log --oneline --decorate"
 
 alias cdaq="cd ~/moos-ivp-aquaticus-aro/missions/aquaticus1.2.1"
 
-alias ls="ls -G"
-alias l="ls -Glah"
 alias dump="lynx -width=$(tput cols) --dump"
 alias sl="pmset sleepnow"
 alias r=". ~/.bashrc"
