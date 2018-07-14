@@ -49,13 +49,22 @@ function dir_prompt {
         printf "\[\e[34m\]\W\[\e[0m\]"
     fi
 }
+char="_"
+if [[ $mac == true ]]; then
+    char="-"
+elif [[ $linux == true ]]; then
+    char="$"
+    if [[ $server == true ]]; then
+        char="∑"
+    fi
+fi
 function status_prompt {
     if (( $1 == 0)); then
         printf "\[\e[32m\]"
     else
         printf "\[\e[31m\]"
     fi
-    printf "\$\[\e[0m\]"
+    printf "%s\[\e[0m\]" "$char"
 }
 function chpwd {
     PS1="$(dir_prompt) $(status_prompt $1) "
