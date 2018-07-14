@@ -51,7 +51,7 @@ function dir_prompt {
 }
 char="_"
 if [[ $mac == true ]]; then
-    char="-"
+    char=">"
 elif [[ $linux == true ]]; then
     char="$"
     if [[ $server == true ]]; then
@@ -64,7 +64,7 @@ function status_prompt {
     else
         printf "\[\e[31m\]"
     fi
-    printf "%s\[\e[0m\]" "$char"
+    printf "$char\[\e[0m\]"
 }
 function chpwd {
     PS1="$(dir_prompt) $(status_prompt $1) "
