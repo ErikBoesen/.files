@@ -135,7 +135,7 @@ alias glo="git log --oneline --decorate"
 
 alias cdaq="cd ~/moos-ivp-aquaticus-aro/missions/aquaticus1.2.1"
 
-alias dump="lynx -width=$(tput cols) --dump"
+alias dump='lynx -width=$(tput cols) --dump'
 alias sl="pmset sleepnow"
 alias r=". ~/.bashrc"
 function nw {
