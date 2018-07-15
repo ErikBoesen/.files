@@ -80,6 +80,8 @@ if [[ $mac == true ]]; then
     alias texclean="rm *.{aux,bbl,blg,log,out,pdf,synctex.gz}"
     alias lockscreen="sudo defaults remove /Library/Preferences/com.apple.loginwindow LoginwindowText"
     alias rmnetconf="sudo rm /Library/Preferences/SystemConfiguration/{com.apple.airport.preferences.plist,com.apple.network.eapolclient.configuration.plist,com.apple.wifi.message-tracer.plist,NetworkInterfaces.plist,preferences.plist}"
+    alias sl="pmset sleepnow"
+    alias nwp="security find-generic-password -wga"
 
     alias vim="/usr/local/bin/vim"
 
@@ -136,7 +138,6 @@ alias glo="git log --oneline --decorate"
 alias cdaq="cd ~/moos-ivp-aquaticus-aro/missions/aquaticus1.2.1"
 
 alias dump='lynx -width=$(tput cols) --dump'
-alias sl="pmset sleepnow"
 alias r=". ~/.bashrc"
 function nw {
     (networksetup -setairportnetwork en1 "$@" & 2>/dev/null)
