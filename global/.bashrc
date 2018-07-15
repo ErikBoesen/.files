@@ -82,6 +82,7 @@ if [[ $mac == true ]]; then
     alias rmnetconf="sudo rm /Library/Preferences/SystemConfiguration/{com.apple.airport.preferences.plist,com.apple.network.eapolclient.configuration.plist,com.apple.wifi.message-tracer.plist,NetworkInterfaces.plist,preferences.plist}"
     alias sl="pmset sleepnow"
     alias nwp="security find-generic-password -wga"
+    alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/sbin/airport"
 
     alias vim="/usr/local/bin/vim"
 
