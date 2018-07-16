@@ -5,6 +5,7 @@ if [[ $(uname) == "Linux"  ]]; then
     linux=true
     [[ $(hostname) == "juno" ]] && server=true
 fi
+[[ $(hostname) == "iceland" ]] && iceland=true
 
 PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
 if [[ $mac == true ]]; then
@@ -86,14 +87,17 @@ if [[ $mac == true ]]; then
     alias nwp="security find-generic-password -wga"
     alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/sbin/airport"
 
-    alias vim="/usr/local/bin/vim"
-
     function gorm {
         rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
     }
 
     #function sudo { ssh root@localhost -T "export PATH=$PATH; cd '$(pwd)'; '$@'" }
     #function su   { ssh root@localhost -o LogLevel=QUIET }
+    if [[ $iceland == true ]]; then
+
+    else
+        alias vim="/usr/local/bin/vim"
+    fi
 elif [[ $linux == true ]]; then
     alias ls="ls --color=auto"
     alias l="ls -lah --color=auto"
