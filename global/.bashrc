@@ -31,6 +31,8 @@ unset PROMPT_COMMAND
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
+EDITOR=vim
+
 umask 077
 
 function dir_prompt {
