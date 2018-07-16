@@ -32,7 +32,9 @@ unset PROMPT_COMMAND
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
-EDITOR=vim
+export EDITOR=vim
+# For ddgr/googler
+export DISABLE_PROMPT_COLOR=1
 
 umask 077
 
