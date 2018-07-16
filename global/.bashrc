@@ -96,9 +96,7 @@ if [[ $mac == true ]]; then
 
     #function sudo { ssh root@localhost -T "export PATH=$PATH; cd '$(pwd)'; '$@'" }
     #function su   { ssh root@localhost -o LogLevel=QUIET }
-    if [[ $iceland == true ]]; then
-
-    else
+    if [[ $iceland != true ]]; then
         alias vim="/usr/local/bin/vim"
     fi
 elif [[ $linux == true ]]; then
@@ -148,7 +146,7 @@ alias gsta='git stash save'
 alias gstp='git stash pop'
 
 alias cdaq="cd ~/moos-ivp-aquaticus-aro/missions/aquaticus1.2.1"
-alias ktm="ktm &"
+alias ktm="(ktm &)"
 
 alias dump='lynx -width=$(tput cols) --dump'
 alias r=". ~/.bashrc"
