@@ -135,6 +135,8 @@ alias gst="git status -s" # Standard ZSH alias doesn't use -s
 alias gs="git status -s" # Account for missing t key
 alias gd="git diff"
 alias glo="git log --oneline --decorate"
+alias gsta='git stash save'
+alias gstp='git stash pop'
 
 alias cdaq="cd ~/moos-ivp-aquaticus-aro/missions/aquaticus1.2.1"
 
