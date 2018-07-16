@@ -2,7 +2,7 @@
 tell application "Spotify"
     if it is running then
         if player state is playing
-            set status_icon to ">"
+            set status_icon to "▶"
         else
             set status_icon to "||"
         end if
