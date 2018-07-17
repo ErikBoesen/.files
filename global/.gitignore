@@ -1,4 +1,8 @@
 .DS_Store
+
+# vim saves
 *.swp
+*.swo
+
 *.out
 .svn
