@@ -4,14 +4,20 @@ battery="$(ioreg -l | awk '$3~/Capacity/{c[$3]=$5}END{OFMT="%.0f";max=c["\"MaxCa
 # Returns "Yes" or "No"
 charging="$(ioreg -l | grep "IsCharging" | awk '{print $5}')"
 if [[ $charging == "Yes" ]]; then
-    printf "\e[34m"
+    printf "#[fg=blue]"
+    #printf "\e[34m"
 elif [[ "$battery" -gt 75 ]]; then
-    printf "\e[32m"
+    printf "#[fg=green]"
+    #printf "\e[32m"
 elif [[ "$battery" -gt 50 ]]; then
-    printf "\e[33m"
+    printf "#[fg=yellow]"
+    #printf "\e[33m"
 elif [[ "$battery" -gt 25 ]]; then
-    printf "\e[1;38;5;202m"
+    printf "#[fg=colour202]"
+    #printf "\e[1;38;5;202m"
 else
-    printf "\e[31m"
+    printf "#[fg=red]"
+    #printf "\e[31m"
 fi
-printf "${battery}%%\e[0m"
+#printf "${battery}%%\e[0m"
+printf "${battery}%%#[fg=white]"
