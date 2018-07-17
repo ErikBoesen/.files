@@ -20,4 +20,4 @@ else
     #printf "\e[31m"
 fi
 #printf "${battery}%%\e[0m"
-printf "${battery}%%#[fg=white]"
+printf "☗ ${battery}%%#[fg=white]"
