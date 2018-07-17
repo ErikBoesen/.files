@@ -98,7 +98,9 @@ if [[ $mac == true ]]; then
 
     #function sudo { ssh root@localhost -T "export PATH=$PATH; cd '$(pwd)'; '$@'" }
     #function su   { ssh root@localhost -o LogLevel=QUIET }
-    if [[ $iceland != true ]]; then
+    if [[ $iceland == true ]]; then
+        alias pip3="pip"
+    else
         alias vim="/usr/local/bin/vim"
     fi
 elif [[ $linux == true ]]; then
