@@ -39,10 +39,11 @@ export DISABLE_PROMPT_COLOR=1
 umask 077
 
 function dir_prompt {
-    if [[ -d .git ]] || git rev-parse --git-dir > /dev/null 2>&1; then
+    if [[ -d .git ]] || git rev-parse --git-dir &>/dev/null; then
         printf "\[\e[34;4m\]"
         printf "\W"
-        branch=$(git rev-parse --abbrev-ref HEAD)
+        branch=$(git symbolic-ref --short HEAD)
+
         if ! [[ $branch == "master" ]]; then # TODO: Support default branches not named master
             printf "\[\e[0;2m\]:$branch"
         fi
