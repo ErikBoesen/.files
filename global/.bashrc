@@ -91,6 +91,10 @@ if [[ $mac == true ]]; then
     alias slp="pmset sleepnow"
     alias nwp="security find-generic-password -wga"
     alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/sbin/airport"
+    function t {
+        (cd $HOME/src/tfix && bundle exec t $@)
+    }
+    alias td="todoist --color"
 
     function gorm {
         rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
