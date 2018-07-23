@@ -94,7 +94,6 @@ if [[ $mac == true ]]; then
     function t {
         (cd $HOME/src/tfix && bundle exec t $@)
     }
-    alias td="todoist --color"
 
     function gorm {
         rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
