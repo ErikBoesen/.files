@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+
+import xml.etree.ElementTree as etree
+import argparse
+
+parser = argparse.ArgumentParser(description='Print a JAMF blacklist in a readable format.')
+parser.add_argument('path', default='/Library/Application Support/JAMF/.blacklist.xml')
+args = parser.parse_args()
+
+blacklist = etree.parse(args.path).getroot()
+for item in blacklist:
+    print('{name} / {process}'.format(name=item[1].text,
+                                      process=item[2].text))
