@@ -155,6 +155,7 @@ alias gsta='git stash save'
 alias gstp='git stash pop'
 
 alias cdaq="cd ~/moos-ivp-aquaticus-aro/missions/aquaticus1.2.1"
+alias fix_perms='echo "chmod -R u=rwX,go=rX"'
 alias ktm="(ktm &)"
 
 alias dump='lynx -width=$(tput cols) --dump'
