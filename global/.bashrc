@@ -86,6 +86,8 @@ if [[ $mac == true ]]; then
     alias tc="texcount *.tex"
     alias texclean="rm *.{aux,bbl,blg,log,out,pdf,synctex.gz}"
     alias lockscreen="sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText"
+    alias wfoff="networksetup -setairportpower en1 off"
+
     alias rmnetconf="sudo rm /Library/Preferences/SystemConfiguration/{com.apple.airport.preferences.plist,com.apple.network.eapolclient.configuration.plist,com.apple.wifi.message-tracer.plist,NetworkInterfaces.plist,preferences.plist}"
     alias sl="ls"
     alias slp="pmset sleepnow"
