@@ -88,13 +88,11 @@ if [[ $mac == true ]]; then
     alias tc="texcount *.tex"
     alias texclean="rm *.{aux,bbl,blg,log,out,pdf,synctex.gz}"
     alias lockscreen="sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText"
-    alias wf="networksetup -setairportpower en1"
 
     alias rmnetconf="sudo rm /Library/Preferences/SystemConfiguration/{com.apple.airport.preferences.plist,com.apple.network.eapolclient.configuration.plist,com.apple.wifi.message-tracer.plist,NetworkInterfaces.plist,preferences.plist}"
     alias sl="ls"
     alias slp="pmset sleepnow"
-    alias nwp="security find-generic-password -wga"
-    alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/sbin/airport"
+    alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
     function t {
         (cd $HOME/src/tfix && bundle exec t $@)
     }
@@ -162,15 +160,6 @@ alias ktm="(ktm &)"
 
 alias dump='lynx -width=$(tput cols) --dump'
 alias r=". ~/.bashrc"
-function nw {
-    (networksetup -setairportnetwork en1 "$@" & 2>/dev/null)
-}
-function nwpass {
-    printf "Password: "
-    read -s pass
-    echo
-    nw "$1" "$pass"
-}
 function tba {
     curl -s "https://www.thebluealliance.com/api/v3/$1?X-TBA-Auth-Key=$TBAKEY"
     echo
