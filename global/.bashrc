@@ -67,7 +67,7 @@ elif [[ $linux == true ]]; then
     fi
 fi
 function status_prompt {
-    if (( $1 == 0)); then
+    if [[ $1 -eq 0 ]]; then
         printf "\[\e[32m\]"
     else
         printf "\[\e[31m\]"
