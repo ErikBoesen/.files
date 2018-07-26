@@ -90,6 +90,7 @@ if [[ $mac == true ]]; then
     alias lockscreen="sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText"
 
     alias rmnetconf="sudo rm /Library/Preferences/SystemConfiguration/{com.apple.airport.preferences.plist,com.apple.network.eapolclient.configuration.plist,com.apple.wifi.message-tracer.plist,NetworkInterfaces.plist,preferences.plist}"
+    alias curr="spotify play uri spotify:user:erikboesen:playlist:3WiQZxcyDiMGyJOg4MqwqZ"
     alias sl="ls"
     alias slp="pmset sleepnow"
     alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
