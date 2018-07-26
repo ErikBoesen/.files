@@ -10,3 +10,7 @@
 	excludesfile = /Users/boesen/.gitignore
 [alias]
 	gud = clone https://github.com/jezen/is-thirteen
+[github]
+	user = ErikBoesen
+[ghi]
+	token = !security find-internet-password -a ErikBoesen -s github.com -l 'ghi token' -w
