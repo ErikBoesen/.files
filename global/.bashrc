@@ -165,6 +165,12 @@ alias r=". ~/.bashrc"
 function nw {
     (networksetup -setairportnetwork en1 "$@" & 2>/dev/null)
 }
+function nwpass {
+    printf "Password: "
+    read -s pass
+    echo
+    nw "$1" "$pass"
+}
 function tba {
     curl -s "https://www.thebluealliance.com/api/v3/$1?X-TBA-Auth-Key=$TBAKEY"
     echo
