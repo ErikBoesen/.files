@@ -1,5 +1,7 @@
 [user]
 	email = me@erikboesen.com
 	name = ErikBoesen
+[core]
+    excludesfile = .gitignore
 [credential]
 	helper = store
