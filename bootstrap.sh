@@ -4,7 +4,7 @@ CYAN="\e[36m"
 GREEN="\e[32m"
 RESET="\e[0m"
 
-if ! type realpath >/dev/null 2>&1; then
+if ! type realpath &>/dev/null; then
     function realpath {
         python -c "import os; print(os.path.realpath('$1'))"
     }
