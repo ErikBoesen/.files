@@ -14,6 +14,7 @@ if [[ $mac == true ]]; then
     PATH=$PATH:/usr/local/texlive/2017/bin/x86_64-darwin
     PATH=$PATH:$HOME/moos-ivp/bin:$HOME/moos-ivp-erik/bin
     PATH=$PATH:$HOME/.rvm/bin
+    PATH=$PATH:$HOME/.rvm/gems/ruby-2.4.4/bin
 elif [[ $linux == true ]]; then
     PATH=$PATH:$HOME/.gem/ruby/2.4.0/bin
 fi
