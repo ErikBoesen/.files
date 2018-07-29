@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Exit if any command fails.
+set -e
+
 if ! type realpath &>/dev/null; then
     function realpath { python -c "from os.path import realpath; print(realpath('$1'))"; }
 fi
