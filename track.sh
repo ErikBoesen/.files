@@ -3,8 +3,9 @@
 # Exit if any command fails.
 set -e
 
-if [[ $# -lt 2 ]]; then
+if [[ $# -lt 1 ]]; then
     echo "usage: $0 source [destination]"
+    exit 1
 fi
 
 if ! type realpath &>/dev/null; then
@@ -13,7 +14,10 @@ fi
 
 source="$1"
 dest="$2"
-script_dir="$(realpath "$0")"
+script_dir="$(dirname "$(realpath "$0")")"
+if [[ -z "$dest" ]]; then
+    dest="$script_dir/global"
+fi
 
 echo "Source: $source"
 echo "Destination: $dest"
@@ -25,7 +29,7 @@ if [[ ! -f "$source" ]]; then
     exit 1
 fi
 
-mv "$source" "$dest"
-ln -s "$dest" "$source"
+mv "$source" "$dest/${source#"$HOME"}"
+ln -s "$dest/${source#"$HOME"}" "$source"
 
 echo "Success!"
