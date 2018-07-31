@@ -10,7 +10,7 @@ set clipboard=unnamed
 set number
 set backspace=2
 " Enable mouse
-set mouse=a
+"set mouse=a
 
 " --- Vundle ---
 set nocompatible
