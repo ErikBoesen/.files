@@ -166,3 +166,6 @@ function tba {
     curl -s "https://www.thebluealliance.com/api/v3/$1?X-TBA-Auth-Key=$TBAKEY"
     echo
 }
+
+# Startup
+td list
