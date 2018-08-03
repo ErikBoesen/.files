@@ -173,3 +173,18 @@ color progress white red
 color index_flags default red '~F'
 # vi: ft=muttrc ts=4 sw=4 sts=4 et
 
+# MACROS
+bind index g noop
+# TODO: Deal with having other folders starting "All"
+macro index ga "<change-folder>=[Gmail]/All<tab><enter>" "Go to all mail"
+macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index gs "<change-folder>=[Gmail]/Starred<enter>" "Go to starred messages"
+macro index gt "<change-folder>=[Gmail]/Trash<enter>" "Go to trash"
+macro index,pager d "<save-message>=[Gmail]/Trash<enter><enter>" "Trash"
+macro index,pager y "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive"
+
+# Sorting
+set sort_aux=reverse-last-date-received
+set sort=threads
+set sort_re
