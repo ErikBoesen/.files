@@ -18,7 +18,7 @@ if [[ $mac == true ]]; then
 elif [[ $linux == true ]]; then
     PATH=$PATH:$HOME/.gem/ruby/2.4.0/bin
 fi
-PATH=$PATH:$HOME/moos-ivp/bin:$HOME/moos-ivp-erik/bin:$HOME/moos-ivp-aquaticus-aro/bin
+PATH=$PATH:$HOME/moos-ivp/bin:$HOME/moos-ivp-erik/bin:$HOME/moos-ivp-aquaticus/bin
 PATH=$PATH:$HOME/Qt/5.11.1/clang_64/bin
 
 export GOPATH=/usr/local/go
@@ -27,7 +27,7 @@ export PATH
 
 # Aquaticus
 export LIBRARY_PATH=/opt/local/lib
-export IVP_BEHAVIOR_DIRS=$HOME/moos-ivp/lib:$HOME/moos-ivp-erik/lib:$HOME/moos-ivp-aquaticus-aro/lib
+export IVP_BEHAVIOR_DIRS=$HOME/moos-ivp/lib:$HOME/moos-ivp-erik/lib:$HOME/moos-ivp-aquaticus/lib
 
 unset PROMPT_COMMAND
 
@@ -156,7 +156,7 @@ alias glo="git log --oneline --decorate"
 alias gsta='git stash save'
 alias gstp='git stash pop'
 
-alias cdaq="cd ~/moos-ivp-aquaticus-aro/missions/aquaticus1.2.1"
+alias cdaq="cd ~/moos-ivp-aquaticus/missions/aquaticus2.0"
 alias fix_perms='echo "chmod -R u=rwX,go=rX"'
 alias ktm="(ktm &)"
 
