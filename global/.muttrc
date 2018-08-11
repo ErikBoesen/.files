@@ -13,7 +13,7 @@ set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set record = "+[Gmail]/Sent Mail"
 set postponed = "+[Gmail]/Drafts"
-#set header_cache = "~/.mutt/cache/headers"
+set header_cache = "~/.mutt/cache/headers"
 set message_cachedir = "~/.mutt/cache/bodies"
 set certificate_file = "~/.mutt/certificates"
 set move = no
@@ -69,7 +69,6 @@ color index         brightcolor165  color233        "~N~F~p"        # new flagge
 color index         brightcolor165  color233        "~U~F~p"        # new flagged messages to me
 color index         color232        color196        "!~N ~D"        # deleted messages
 color index         color232        color196        "~N ~D"         # deleted new messages
-color index         color244        color233        "~v~(!~N)"      # collapsed thread with no unread
 color index         color81         color233        "~v~(~N)"       # collapsed thread with some unread
 color index         color81         color233        "~N~v~(~N)"     # collapsed thread with unread parent
 # statusbg used to indicated flagged when foreground color shows other status
@@ -123,6 +122,7 @@ color body brightcolor39   color233 	"[-a-z_0-9.]+@[-a-z_0-9.]+"
 color body          blue            default         "(^|[[:space:][:punct:]])_[^_]+_([[:space:][:punct:]]|$)"
 mono  body          underline                       "(^|[[:space:][:punct:]])_[^_]+_([[:space:][:punct:]]|$)"
 # /italic/  (Sometimes gets directory names)
+color body         blue            default         "(^|[[:space:][:punct:]])/[^/]+/([[:space:][:punct:]]|$)"
 color body         blue            default         "(^|[[:space:][:punct:]])/[^/]+/([[:space:][:punct:]]|$)"
 mono body          underline                       "(^|[[:space:][:punct:]])/[^/]+/([[:space:][:punct:]]|$)"
 
