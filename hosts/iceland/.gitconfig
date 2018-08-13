@@ -7,7 +7,7 @@
 [commit]
 	gpgsign = true
 [core]
-	excludesfile = /Users/boesen/.gitignore
+	excludesfile = ~/.gitignore
 [alias]
 	gud = clone https://github.com/jezen/is-thirteen
 [github]
