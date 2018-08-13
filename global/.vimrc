@@ -24,6 +24,7 @@ Plugin 'HeroCC/moos-vim-syntax'
 Plugin 'lervag/vimtex'
 Plugin 'keith/swift.vim'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'darfink/vim-plist'
 " Theme
 Plugin 'ErikBoesen/vim-brogrammer-theme'
@@ -32,8 +33,9 @@ Plugin 'frc1418/vim-victis'
 call vundle#end()
 filetype plugin indent on
 
-colorscheme brogrammer
+"colorscheme brogrammer
 "colorscheme victis
+colorscheme papercolor
 hi Normal guibg=NONE ctermbg=NONE
 
 " Remove trailing whitespace on write
