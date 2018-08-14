@@ -156,6 +156,9 @@ alias glo="git log --oneline --decorate"
 alias gsta='git stash save'
 alias gstp='git stash pop'
 
+# Silence unnecessary gdb logs
+alias gdb="gdb -q"
+
 alias cdaq="cd ~/moos-ivp-aquaticus/missions/aquaticus2.0"
 alias fix_perms='echo "chmod -R u=rwX,go=rX"'
 alias ktm="(ktm &)"
