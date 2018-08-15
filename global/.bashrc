@@ -170,5 +170,5 @@ function tba {
     echo
 }
 
-# Startup
-td list
+# Startup logs
+#td list
