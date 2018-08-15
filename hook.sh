@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-ln -fs ../.hooks .git/hooks
+rm -rf .git/hooks
+ln -s ../.hooks .git/hooks
