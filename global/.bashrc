@@ -153,6 +153,11 @@ function espera {
     done
     printf "\r"
 }
+function essh {
+    # Espera hasta que esté listo pa conectarse
+    espera "$1"
+    ssh "$1"
+}
 
 alias g="git"
 alias ga="git add"
