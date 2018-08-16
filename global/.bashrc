@@ -144,11 +144,14 @@ elif [[ $linux == true ]]; then
 fi
 
 function espera {
-    printf "(Esperando $1)"
+    chars="-\\|/"
+    tries=0
     while ! ping -t 1 -c 1 -n "$1" &> /dev/null; do
-        printf "."
+        ((tries++))
+        printf "\r$1 ${chars:$((tries%4)):1}"
+        sleep 0.2
     done
-    printf "\n"
+    printf "\r"
 }
 
 alias g="git"
