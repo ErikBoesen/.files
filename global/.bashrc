@@ -142,6 +142,15 @@ elif [[ $linux == true ]]; then
         fi
     fi
 fi
+
+function espera {
+    printf "(Esperando $1)"
+    while ! ping -t 1 -c 1 -n "$1" &> /dev/null; do
+        printf "."
+    done
+    printf "\n"
+}
+
 alias g="git"
 alias ga="git add"
 alias gc="git commit"
