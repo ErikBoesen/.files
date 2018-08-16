@@ -148,7 +148,7 @@ function espera {
     tries=0
     while ! ping -t 1 -c 1 -n "$1" &> /dev/null; do
         ((tries++))
-        printf "\r$1 ${chars:$((tries%4)):1}"
+        printf "\r\e[0m$1 \e[32m${chars:$((tries%4)):1}"
         sleep 0.2
     done
     printf "\r"
@@ -172,6 +172,7 @@ alias gstp='git stash pop'
 alias gdb="gdb -q"
 
 alias cdaq="cd ~/moos-ivp-aquaticus/missions/aquaticus2.0"
+# I will eventually memorize this and remove it.
 alias fix_perms='echo "chmod -R u=rwX,go=rX"'
 alias ktm="(ktm &)"
 
