@@ -25,6 +25,10 @@ export GOPATH=/usr/local/go
 PATH=$PATH:$GOPATH/bin
 export PATH
 
+if [[ -z $TMUX ]]; then
+    (tmux a || tmux) && exit $?
+fi
+
 # Aquaticus
 export LIBRARY_PATH=/opt/local/lib
 export IVP_BEHAVIOR_DIRS=$HOME/moos-ivp/lib:$HOME/moos-ivp-erik/lib:$HOME/moos-ivp-aquaticus/lib
