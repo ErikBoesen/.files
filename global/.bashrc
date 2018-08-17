@@ -155,8 +155,7 @@ function espera {
 }
 function essh {
     # Espera hasta que esté listo pa conectarse
-    espera "$1"
-    ssh "$1"
+    espera "$1" && ssh "$1"
 }
 
 alias g="git"
