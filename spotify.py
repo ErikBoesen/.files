@@ -20,4 +20,3 @@ playing = spotify_properties.Get('org.mpris.MediaPlayer2.Player', 'PlaybackStatu
 print('{icon} {artist} - {title}'.format(icon='▶' if playing == 'Playing' else '||',
                                          artist=metadata['xesam:artist'][0],
                                          title=metadata['xesam:title']))
-

@@ -3,7 +3,7 @@
 status=""
 div=" #[fg=colour240]// "
 
-spotify="$(~/.bin/spotifystatus.scpt)"
+spotify="$(~/.bin/spotify.py)"
 if ! [[ -z $spotify ]]; then
     status+="#[fg=colour2]${spotify}${div}"
 fi
