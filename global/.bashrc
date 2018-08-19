@@ -89,7 +89,6 @@ PROMPT_COMMAND="chpwd \$?;$PROMPT_COMMAND"
 if [[ $mac == true ]]; then
     alias ls="ls -G"
     alias l="ls -Glah"
-    alias git="hub"
     alias burn="git clone https://github.com/ErikBoesen/burn ~/burn; ~/burn/burn.sh"
     alias notes="cd ~/src/ibhlcs/notes && jupyter notebook"
     alias tc="texcount *.tex"
@@ -164,6 +163,7 @@ function essh {
     espera "$1" && ssh "$1"
 }
 
+alias git="hub"
 alias g="git"
 alias ga="git add"
 alias gc="git commit"
