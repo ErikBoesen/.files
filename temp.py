@@ -1,13 +1,18 @@
 #!/usr/bin/python3
 
+# Temperature thresholds
+CRITICAL = 80
+DANGER   = 60
+WARNING  = 40
+
 with open('/sys/class/thermal/thermal_zone0/temp', 'r') as f:
     temperature = float(f.read()) / 1000
 
-if temperature > 80:
+if temperature > CRITICAL:
     colour = 'red'
-elif temperature > 60:
+elif temperature > DANGER:
     colour = 'colour202'
-elif temperature > 40:
+elif temperature > WARNING:
     colour = 'yellow'
 else:
     colour = 'blue'
