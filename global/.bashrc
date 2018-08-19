@@ -17,6 +17,7 @@ if [[ $mac == true ]]; then
     PATH=$PATH:$HOME/.rvm/gems/ruby-2.4.4/bin
 elif [[ $linux == true ]]; then
     PATH=$PATH:$HOME/.gem/ruby/2.4.0/bin
+    PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin
 fi
 PATH=$PATH:$HOME/moos-ivp/bin:$HOME/moos-ivp-erik/bin:$HOME/moos-ivp-aquaticus/bin
 PATH=$PATH:$HOME/Qt/5.11.1/clang_64/bin
