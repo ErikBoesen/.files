@@ -2,4 +2,4 @@
 
 #network=$(iwgetid -r)
 ip=$(hostname -i)
-printf "☰ ${ip::-2}"
+printf "☰ ${ip::-1}"
