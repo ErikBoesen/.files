@@ -6,7 +6,8 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
-set clipboard=unnamed
+"set clipboard=unnamed
+set clipboard=unnamedplus
 set number
 set backspace=2
 " Enable mouse
