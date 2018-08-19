@@ -9,7 +9,7 @@ if ! [[ -z $spotify ]]; then
 fi
 
 status+="#[fg=blue]$(internet.sh)${div}"
-status+="$(temperature.py)${div}"
+status+="$(temp.py)${div}"
 status+="#[fg=red]⧖"
 
 echo "$status"
