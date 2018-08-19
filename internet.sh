@@ -1,3 +1,4 @@
 #!/bin/bash
 
-printf "☰ $(hostname -i)"
+ip=$(hostname -i)
+printf "☰ ${ip::-2}"
