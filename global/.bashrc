@@ -26,9 +26,10 @@ export GOPATH=/usr/local/go
 PATH=$PATH:$GOPATH/bin
 export PATH
 
-if [[ -z $TMUX ]]; then
-    (tmux a || tmux) && exit $?
-fi
+# Temporarily disabled; will recurse if you self-ssh
+#if [[ -z $TMUX ]]; then
+#    (tmux a || tmux) && exit $?
+#fi
 
 # Aquaticus
 export LIBRARY_PATH=/opt/local/lib
