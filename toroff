@@ -1,5 +1,0 @@
-#!/bin/bash
-
-gsettings set org.gnome.system.proxy.socks host ''
-gsettings set org.gnome.system.proxy.socks port 0
-echo "Turned off Tor in proxy settings."
