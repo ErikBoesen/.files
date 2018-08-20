@@ -17,4 +17,4 @@ elif temperature > WARNING:
 else:
     colour = ''
 
-print(f'#[{colour}]{temperature}°C#[bg=default,fg=default,noblink]')
+print(f'#[{colour}]{temperature}°C#[bg=default,fg=default,noblink]', end='')
