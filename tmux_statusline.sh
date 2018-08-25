@@ -10,6 +10,7 @@ fi
 
 status+="#[fg=blue]$(internet.sh)${div}"
 status+="$(temp.py)${div}"
-status+="#[fg=red]⧖"
+# TODO: Use real analog clock
+status+="#[fg=red]◶"
 
 echo "$status"
