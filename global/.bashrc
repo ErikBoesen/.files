@@ -114,7 +114,8 @@ if [[ $mac == true ]]; then
     if [[ $iceland == true ]]; then
         alias pip3="pip"
     else
-        alias vim="/usr/local/bin/vim"
+        #alias vim="/usr/local/bin/vim"
+        alias vim=vim
     fi
 elif [[ $linux == true ]]; then
     alias ls="ls --color=auto"
