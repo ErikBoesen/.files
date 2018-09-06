@@ -9,6 +9,7 @@ fi
 
 PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
 if [[ $mac == true ]]; then
+    PATH=$PATH:$HOME/.local/homebrew/bin
     PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
     PATH=$PATH:$HOME/Library/Python/3.6/bin
     PATH=$PATH:/usr/local/texlive/2017/bin/x86_64-darwin
