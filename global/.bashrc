@@ -114,8 +114,10 @@ if [[ $mac == true ]]; then
     if [[ $iceland == true ]]; then
         alias pip3="pip"
     else
+        # Temporary GMHS things
         #alias vim="/usr/local/bin/vim"
         alias vim=vim
+        alias tmux="$HOME/.local/homebrew/Cellar/tmux/2.7/bin/mtx"
     fi
 elif [[ $linux == true ]]; then
     alias ls="ls --color=auto"
