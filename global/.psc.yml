@@ -2,4 +2,5 @@ colors: {course_name: blue, high_grade: green, low_grade: red, medium_grade: yel
 host: ps.fccps.org
 ignored_periods: [HR, DA]
 ignored_marking_periods: [M1, M2, V1]
+remove_empty_marking_periods: false
 thresholds: {high: 95, medium: 90}
