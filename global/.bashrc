@@ -116,7 +116,7 @@ if [[ $mac == true ]]; then
     else
         # Temporary GMHS things
         #alias vim="/usr/local/bin/vim"
-        alias vim=vim
+        alias vim="$HOME/.local/homebrew/bin/vim"
         alias tmux="$HOME/.local/homebrew/Cellar/tmux/2.7/bin/mtx"
     fi
 elif [[ $linux == true ]]; then
