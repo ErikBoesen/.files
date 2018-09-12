@@ -184,8 +184,7 @@ alias gstp='git stash pop'
 # Silence unnecessary gdb logs
 alias gdb="gdb -q"
 
-alias texclean="rm *.{aux,bbl,blg,log,out,pdf,synctex.gz}"
-
+alias texclean="rm *.{aux,bbl,blg,log,out,pdf,synctex.gz,pyg,fls,fdb_latexmk}"
 alias cdaq="cd ~/moos-ivp-aquaticus/missions/aquaticus2.0"
 # I will eventually memorize this and remove it.
 alias fix_perms='echo "chmod -R u=rwX,go=rX"'
