@@ -93,7 +93,6 @@ if [[ $mac == true ]]; then
     alias burn="git clone https://github.com/ErikBoesen/burn ~/burn; ~/burn/burn.sh"
     alias notes="cd ~/src/ibhlcs/notes && jupyter notebook"
     alias tc="texcount *.tex"
-    alias texclean="rm *.{aux,bbl,blg,log,out,pdf,synctex.gz}"
     alias lockscreen="sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText"
 
     alias rmnetconf="sudo rm /Library/Preferences/SystemConfiguration/{com.apple.airport.preferences.plist,com.apple.network.eapolclient.configuration.plist,com.apple.wifi.message-tracer.plist,NetworkInterfaces.plist,preferences.plist}"
@@ -184,6 +183,8 @@ alias gstp='git stash pop'
 
 # Silence unnecessary gdb logs
 alias gdb="gdb -q"
+
+alias texclean="rm *.{aux,bbl,blg,log,out,pdf,synctex.gz}"
 
 alias cdaq="cd ~/moos-ivp-aquaticus/missions/aquaticus2.0"
 # I will eventually memorize this and remove it.
