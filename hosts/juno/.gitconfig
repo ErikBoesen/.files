@@ -3,6 +3,6 @@
 	email = me@erikboesen.com
 	name = ErikBoesen
 [core]
-    excludesfile = .gitignore
+    excludesfile = ~/.gitignore
 [credential]
 	helper = store
