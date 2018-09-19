@@ -1,4 +1,5 @@
 [user]
+    signingkey = AE87239A4A8A2A1A
 	email = me@erikboesen.com
 	name = ErikBoesen
 [core]
