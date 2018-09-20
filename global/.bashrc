@@ -5,7 +5,6 @@ if [[ $(uname) == "Linux"  ]]; then
     linux=true
     [[ $(hostname) == "juno" ]] && server=true
 fi
-[[ $(hostname) == "iceland" ]] && iceland=true
 
 PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
 if [[ $mac == true ]]; then
@@ -108,16 +107,12 @@ if [[ $mac == true ]]; then
         rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
     }
 
+    # Temporary GMHS things
+    #alias vim="/usr/local/bin/vim"
     #function sudo { ssh root@localhost -T "export PATH=$PATH; cd '$(pwd)'; '$@'" }
     #function su   { ssh root@localhost -o LogLevel=QUIET }
-    if [[ $iceland == true ]]; then
-        alias pip3="pip"
-    else
-        # Temporary GMHS things
-        #alias vim="/usr/local/bin/vim"
-        alias vim="$HOME/.local/homebrew/bin/vim"
-        alias tmux="$HOME/.local/homebrew/Cellar/tmux/2.7/bin/mtx"
-    fi
+    alias vim="$HOME/.local/homebrew/bin/vim"
+    alias tmux="$HOME/.local/homebrew/Cellar/tmux/2.7/bin/mtx"
 elif [[ $linux == true ]]; then
     alias ls="ls --color=auto"
     alias l="ls -lah --color=auto"
