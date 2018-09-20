@@ -55,7 +55,7 @@ function dir_prompt {
         branch=$(git symbolic-ref --short HEAD)
 
         if ! [[ $branch == "master" ]]; then # TODO: Support default branches not named master
-            printf "\[\e[0;2m\]:$branch"
+            printf "\[\e[0;90m\]:$branch"
         fi
         printf "\[\e[0m\]"
         if ! [[ -z $(git status --porcelain) ]]; then
