@@ -176,7 +176,7 @@ alias glo="git log --oneline --decorate"
 alias gsta='git stash save'
 alias gstp='git stash pop'
 function gpu {
-    git push 2>&1 | grep "Done"
+    git push --porcelain 2>&1 | grep "Done"
 }
 
 # Silence unnecessary gdb logs
