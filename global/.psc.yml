@@ -3,4 +3,5 @@ host: ps.fccps.org
 ignored_periods: [HR, DA, NT]
 ignored_marking_periods: [M1, M2, V1]
 remove_empty_marking_periods: true
+remove_redundant_semester: true
 thresholds: {high: 95, medium: 90}
