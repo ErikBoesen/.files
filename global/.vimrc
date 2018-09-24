@@ -26,6 +26,7 @@ Plugin 'lervag/vimtex'
 Plugin 'keith/swift.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'darfink/vim-plist'
+Plugin 'airblade/vim-gitgutter'
 " Theme
 Plugin 'ErikBoesen/vim-brogrammer-theme'
 Plugin 'frc1418/vim-victis'
