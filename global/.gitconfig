@@ -10,3 +10,7 @@
     whitespace = warn
     autocrlf = input
     excludesfile = ~/.gitignore
+[github]
+	user = ErikBoesen
+[ghi]
+	token = !security find-internet-password -a ErikBoesen -s github.com -l 'ghi token' -w
