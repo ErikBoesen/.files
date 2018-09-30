@@ -99,6 +99,7 @@ if [[ $mac == true ]]; then
     alias sl="ls"
     alias slp="pmset sleepnow"
     alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
+    alias eog="open"
     function t {
         (cd $HOME/src/tfix && bundle exec t $@)
     }
