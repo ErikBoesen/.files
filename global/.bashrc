@@ -116,6 +116,9 @@ elif [[ $linux == true ]]; then
     alias ls="ls --color=auto"
     alias l="ls -lah --color=auto"
     alias torrent="transmission-cli"
+    function wallpaper {
+        gsettings set org.gnome.desktop.background picture-uri file://"$(realpath "$1")"
+    }
 
     if [[ $server == true ]]; then
         alias update="tmux new-session -s updates bash -c 'sudo zypper update -y && rm ~/.update' >/dev/null"
