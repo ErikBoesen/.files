@@ -12,6 +12,8 @@ set number
 set backspace=2
 " Enable mouse
 "set mouse=a
+" Allow opening more tabs
+set tabpagemax=256
 
 " --- Vundle ---
 set nocompatible
