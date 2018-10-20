@@ -1,4 +1,12 @@
 #!/bin/python3
+import sys
 
-for x in range(32,127):
-    print("%s | %c" % (str(x).ljust(3), chr(x)))
+if not sys.argc:
+    for x in range(32,127):
+        print("%s | %c" % (str(x).ljust(3), chr(x)))
+else:
+    param = sys.argv[0]
+    if param.isdigit():
+        print(chr(int(param))
+    else:
+        print(ord(param))
