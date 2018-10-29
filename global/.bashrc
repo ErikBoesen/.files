@@ -11,7 +11,7 @@ if [[ $mac == true ]]; then
     PATH=$PATH:$HOME/.local/homebrew/bin
     PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
     PATH=$PATH:$HOME/Library/Python/3.6/bin
-    PATH=$PATH:/usr/local/texlive/2017/bin/x86_64-darwin
+    PATH=$PATH:/usr/local/texlive/2018/bin/x86_64-darwin
     PATH=$PATH:$HOME/moos-ivp/bin:$HOME/moos-ivp-erik/bin
     PATH=$PATH:$HOME/.rvm/bin
     PATH=$PATH:$HOME/.rvm/gems/ruby-2.4.4/bin
@@ -160,6 +160,7 @@ function espera {
 }
 function essh {
     # Espera hasta que esté listo pa conectarse
+    # TODO: Strip username and/or read from SSH config
     espera "$1" && ssh "$1"
 }
 
@@ -198,4 +199,4 @@ function tba {
 }
 
 # Startup logs
-#td list
+td list
