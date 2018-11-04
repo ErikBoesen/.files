@@ -7,8 +7,8 @@ if [[ $(id -u) != 0 ]]; then
     echo "Must be run as root!" >&2
     exit 1
 fi
-pacman -S vmmon
-yaourt -S vmware-systemd-services
+#pacman -S vmmon
+#yaourt -S vmware-systemd-services
 systemctl restart vmmon
 vmware-patch -f
 sudo systemctl restart vmware
