@@ -106,6 +106,8 @@ if [[ $mac == true ]]; then
         rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
     }
 
+    function vup   { ssh mir -T "pamixer --increase $1"; }
+    function vdown { ssh mir -T "pamixer --decrease $1"; }
     # Temporary GMHS things
     #alias vim="/usr/local/bin/vim"
     #function sudo { ssh root@localhost -T "export PATH=$PATH; cd '$(pwd)'; '$@'" }
@@ -199,4 +201,4 @@ function tba {
 }
 
 # Startup logs
-td list
+#td list
