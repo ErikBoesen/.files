@@ -3,6 +3,7 @@
 # vim saves
 *.swp
 *.swo
+*.swn
 
 *.out
 .svn
