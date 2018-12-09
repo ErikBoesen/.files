@@ -11,11 +11,11 @@ fi
 #yaourt -S vmware-systemd-services
 systemctl restart vmmon
 vmware-patch -f
-sudo systemctl restart vmware
-sudo systemctl restart vmware-usbarbitrator
-sudo systemctl restart vmware-workstation-server
-sudo systemctl restart vmware-networks
-sudo systemctl restart vmnet
+systemctl restart vmware
+systemctl restart vmware-usbarbitrator
+systemctl restart vmware-workstation-server
+systemctl restart vmware-networks
+systemctl restart vmnet
 modprobe -a vmw_vmci vmmon
 modprobe vmnet
 vmware-networks --start
