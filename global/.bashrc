@@ -7,6 +7,7 @@ if [[ $(uname) == "Linux"  ]]; then
 fi
 
 PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
+GOPATH=/usr/local/go
 if [[ $mac == true ]]; then
     PATH=$PATH:$HOME/.local/homebrew/bin
     PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
@@ -15,6 +16,7 @@ if [[ $mac == true ]]; then
     PATH=$PATH:$HOME/moos-ivp/bin:$HOME/moos-ivp-erik/bin
     PATH=$PATH:$HOME/.rvm/bin
     PATH=$PATH:$HOME/.rvm/gems/ruby-2.4.4/bin
+    GOPATH=$HOME/.local/go
 elif [[ $linux == true ]]; then
     PATH=$PATH:$HOME/.gem/ruby/2.4.0/bin
     PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin
@@ -22,9 +24,9 @@ fi
 PATH=$PATH:$HOME/moos-ivp/bin:$HOME/moos-ivp-erik/bin:$HOME/moos-ivp-aquaticus/bin
 PATH=$PATH:$HOME/Qt/5.11.1/clang_64/bin
 
-export GOPATH=/usr/local/go
 PATH=$PATH:$GOPATH/bin
 export PATH
+export GOPATH
 
 # Aquaticus
 export LIBRARY_PATH=/opt/local/lib
