@@ -4,6 +4,10 @@
 *.swp
 *.swo
 *.swn
+*.swm
+*.swl
+*.swk
+*.swj
 
 *.out
 .svn
