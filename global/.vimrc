@@ -36,8 +36,8 @@ Plugin 'frc1418/vim-victis'
 call vundle#end()
 filetype plugin indent on
 
-colorscheme brogrammer
-"colorscheme victis
+"colorscheme brogrammer
+colorscheme victis
 "colorscheme papercolor
 hi Normal guibg=NONE ctermbg=NONE
 
