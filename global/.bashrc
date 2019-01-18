@@ -189,7 +189,7 @@ function gpu {
 # Silence unnecessary gdb logs
 alias gdb="gdb -q"
 
-alias texclean="rm -fv *.{aux,bbl,blg,log,out,pdf,synctex.gz,pyg,fls,fdb_latexmk}"
+alias texclean="rm -fv *.{aux,bbl,blg,log,out,pdf,synctex.gz,pyg,fls,fdb_latexmk,dvi}"
 alias cdaq="cd ~/moos-ivp-aquaticus/missions/aquaticus2.0"
 # I will eventually memorize this and remove it.
 alias fix_perms='echo "chmod -R u=rwX,go=rX"'
