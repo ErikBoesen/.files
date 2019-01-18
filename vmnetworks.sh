@@ -13,6 +13,7 @@ xauth=~erik/.Xauthority
 touch $xauth
 chmod u+rw $xauth
 chown erik:erik $xauth
+mkdir ~erik/vmware
 #pacman -S vmmon
 #yaourt -S vmware-systemd-services
 systemctl restart vmmon
