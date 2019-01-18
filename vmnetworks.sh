@@ -7,6 +7,12 @@ if [[ $(id -u) != 0 ]]; then
     echo "Must be run as root!" >&2
     exit 1
 fi
+
+vmware-modconfig --console --install-all
+xauth=~erik/.Xauthority
+touch $xauth
+chmod u+rw $xauth
+chown erik:erik $xauth
 #pacman -S vmmon
 #yaourt -S vmware-systemd-services
 systemctl restart vmmon
