@@ -1,10 +1,7 @@
 . $HOME/.private.sh
 
 [[ $(uname) == "Darwin" ]] && mac=true
-if [[ $(uname) == "Linux"  ]]; then
-    linux=true
-    [[ $(hostname) == "juno" ]] && server=true
-fi
+[[ $(uname) == "Linux"  ]] && linux=true
 
 PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
 GOPATH=/usr/local/go
@@ -39,8 +36,6 @@ shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 export EDITOR=vim
-# For ddgr/googler
-export DISABLE_PROMPT_COLOR=1
 
 umask 077
 
@@ -66,9 +61,7 @@ if [[ $mac == true ]]; then
     char=">"
 elif [[ $linux == true ]]; then
     char="$"
-    if [[ $server == true ]]; then
-        char="∑"
-    fi
+    #char="∑"
 fi
 function status_prompt {
     if [[ $1 -eq 0 ]]; then
@@ -109,24 +102,12 @@ elif [[ $linux == true ]]; then
         gsettings set org.gnome.desktop.background picture-uri file://"$(realpath "$1")"
     }
 
-    if [[ $server == true ]]; then
-        alias update="tmux new-session -s updates bash -c 'sudo zypper update -y && rm ~/.update' >/dev/null"
-        alias leoupd="cd ~/leopard;git pull;zip -r ~/www/leopard.zip ."
+    alias suspend="systemctl suspend"
 
-        printf '\r\n'
-        printf "  \e[36mJ\e[32m U\e[33m N\e[31m O 🚀\e[0m\n"
-        printf "  \e[34m$(uptime | awk '{print $3 "d " substr($5, 1, length($5)-1)}').\e[0m\n"
-    else
-        alias update="tmux new-session -s updates bash -c 'sudo pacman -Syu --noconfirm && rm ~/.update' >/dev/null"
-        alias suspend="systemctl suspend"
-
-        alias pbcopy="xsel --clipboard --input"
-        alias pbpaste="xsel --clipboard --output"
-        alias vup="pamixer --increase"
-        alias vdown="pamixer --decrease"
-
-        alsi -l
-    fi
+    alias pbcopy="xsel --clipboard --input"
+    alias pbpaste="xsel --clipboard --output"
+    alias vup="pamixer --increase"
+    alias vdown="pamixer --decrease"
 
     if [ -e $HOME/.update ]; then
         printf "Check for updates? $fg[green](y):$reset_color "
