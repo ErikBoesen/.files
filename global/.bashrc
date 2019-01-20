@@ -108,14 +108,6 @@ elif [[ $linux == true ]]; then
     alias pbpaste="xsel --clipboard --output"
     alias vup="pamixer --increase"
     alias vdown="pamixer --decrease"
-
-    if [ -e $HOME/.update ]; then
-        printf "Check for updates? $fg[green](y):$reset_color "
-        read response
-        if [[ "$response" =~ ^[yY]?$ ]]; then
-            update
-        fi
-    fi
 fi
 
 function espera {
