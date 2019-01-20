@@ -87,21 +87,13 @@ if [[ $mac == true ]]; then
     alias ls="ls -G"
     alias l="ls -Glah"
     alias burn="git clone https://github.com/ErikBoesen/burn ~/burn; ~/burn/burn.sh"
-    alias notes="cd ~/src/ibhlcs/notes && jupyter notebook"
-    alias tc="texcount *.tex"
-    alias lockscreen="sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText"
 
-    alias rmnetconf="sudo rm /Library/Preferences/SystemConfiguration/{com.apple.airport.preferences.plist,com.apple.network.eapolclient.configuration.plist,com.apple.wifi.message-tracer.plist,NetworkInterfaces.plist,preferences.plist}"
-    alias curr="spotify play uri spotify:user:erikboesen:playlist:3WiQZxcyDiMGyJOg4MqwqZ"
     alias sl="ls"
     alias slp="pmset sleepnow"
     alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
     # Preview images
     function eog {
         (qlmanage -p $@ &>/dev/null &)
-    }
-    function t {
-        (cd $HOME/src/tfix && bundle exec t $@)
     }
 
     function gorm {
@@ -182,12 +174,6 @@ alias gd="git diff"
 alias glo="git log --oneline --decorate"
 alias gsta='git stash save'
 alias gstp='git stash pop'
-function gpu {
-    git push --porcelain 2>&1 | grep "Done"
-}
-
-# Silence unnecessary gdb logs
-alias gdb="gdb -q"
 
 alias texclean="rm -fv *.{aux,bbl,blg,log,out,pdf,synctex.gz,pyg,fls,fdb_latexmk,dvi}"
 alias cdaq="cd ~/moos-ivp-aquaticus/missions/aquaticus2.0"
@@ -195,12 +181,4 @@ alias cdaq="cd ~/moos-ivp-aquaticus/missions/aquaticus2.0"
 alias fix_perms='echo "chmod -R u=rwX,go=rX"'
 alias ktm="(ktm &)"
 
-alias dump='lynx -width=$(tput cols) --dump'
 alias r=". ~/.bashrc"
-function tba {
-    curl -s "https://www.thebluealliance.com/api/v3/$1?X-TBA-Auth-Key=$TBAKEY"
-    echo
-}
-
-# Startup logs
-#td list
