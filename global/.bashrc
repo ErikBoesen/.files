@@ -102,10 +102,6 @@ if [[ $mac == true ]]; then
 
     function vup   { ssh mir -T "pamixer --increase $1"; }
     function vdown { ssh mir -T "pamixer --decrease $1"; }
-    # Temporary GMHS things
-    #alias vim="/usr/local/bin/vim"
-    #function sudo { ssh root@localhost -T "export PATH=$PATH; cd '$(pwd)'; '$@'" }
-    #function su   { ssh root@localhost -o LogLevel=QUIET }
     alias vim="$HOME/.local/homebrew/bin/vim"
     alias tmux="$HOME/.local/homebrew/Cellar/tmux/2.7/bin/mtx"
 elif [[ $linux == true ]]; then
