@@ -77,12 +77,12 @@ function chpwd {
 PROMPT_COMMAND="chpwd \$?;$PROMPT_COMMAND"
 
 if [[ $mac == true ]]; then
-    alias ls="ls -G"
-    alias l="ls -Glah"
-    alias burn="git clone https://github.com/ErikBoesen/burn ~/burn; ~/burn/burn.sh"
+    alias ls='ls -G'
+    alias l='ls -Glah'
+    alias burn='git clone https://github.com/ErikBoesen/burn ~/burn; ~/burn/burn.sh'
 
-    alias slp="pmset sleepnow"
-    alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
+    alias slp='pmset sleepnow'
+    alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
     # Preview images
     function eog {
         (qlmanage -p $@ &>/dev/null &)
@@ -95,19 +95,18 @@ if [[ $mac == true ]]; then
     # Circumvent GMHS tmux blacklisting
     alias tmux="$HOME/.local/homebrew/Cellar/tmux/2.7/bin/mtx"
 elif [[ $linux == true ]]; then
-    alias ls="ls --color=auto"
-    alias l="ls -lah --color=auto"
-    alias torrent="transmission-cli"
+    alias ls='ls --color=auto'
+    alias l='ls -lah --color=auto'
+    alias torrent='transmission-cli'
     function wallpaper {
         gsettings set org.gnome.desktop.background picture-uri file://"$(realpath "$1")"
     }
 
-    alias suspend="systemctl suspend"
-
-    alias pbcopy="xsel --clipboard --input"
-    alias pbpaste="xsel --clipboard --output"
-    alias vup="pamixer --increase"
-    alias vdown="pamixer --decrease"
+    alias suspend='systemctl suspend'
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
+    alias vup='pamixer --increase'
+    alias vdown='pamixer --decrease'
 fi
 
 function espera {
@@ -126,29 +125,29 @@ function essh {
     espera "$1" && ssh "$1"
 }
 
-alias git="hub"
-alias g="git"
-alias ga="git add"
-alias gc="git commit"
-alias gp="git push"
-alias gl="git pull"
-alias gb="git branch"
-alias gco="git checkout"
-alias gst="git status -s" # Standard ZSH alias doesn't use -s
-alias gs="git status -s" # Account for missing t key
-alias gd="git diff"
-alias glo="git log --oneline --decorate"
+alias git='hub'
+alias g='git'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git pull'
+alias gb='git branch'
+alias gco='git checkout'
+alias gst='git status -s' # Standard ZSH alias doesn't use -s
+alias gs='git status -s' # Account for missing t key
+alias gd='git diff'
+alias glo='git log --oneline --decorate'
 alias gsta='git stash save'
 alias gstp='git stash pop'
 
-alias texclean="rm -fv *.{aux,bbl,blg,log,out,pdf,synctex.gz,pyg,fls,fdb_latexmk,dvi}"
-alias cdaq="cd ~/moos-ivp-aquaticus/missions/aquaticus2.0"
+alias texclean='rm -fv *.{aux,bbl,blg,log,out,pdf,synctex.gz,pyg,fls,fdb_latexmk,dvi}'
+alias cdaq='cd ~/moos-ivp-aquaticus/missions/aquaticus2.0'
 # I will eventually memorize this and remove it.
 alias fix_perms='echo "chmod -R u=rwX,go=rX"'
-alias ktm="(ktm &)"
-alias sl="ls"
+alias ktm='(ktm &)'
+alias sl='ls'
 function gorm {
     rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
 }
 
-alias r=". ~/.bashrc"
+alias r='. ~/.bashrc'
