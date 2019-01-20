@@ -88,7 +88,6 @@ if [[ $mac == true ]]; then
     alias l="ls -Glah"
     alias burn="git clone https://github.com/ErikBoesen/burn ~/burn; ~/burn/burn.sh"
 
-    alias sl="ls"
     alias slp="pmset sleepnow"
     alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
     # Preview images
@@ -96,13 +95,11 @@ if [[ $mac == true ]]; then
         (qlmanage -p $@ &>/dev/null &)
     }
 
-    function gorm {
-        rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
-    }
-
     function vup   { ssh mir -T "pamixer --increase $1"; }
     function vdown { ssh mir -T "pamixer --decrease $1"; }
     alias vim="$HOME/.local/homebrew/bin/vim"
+
+    # Circumvent GMHS tmux blacklisting
     alias tmux="$HOME/.local/homebrew/Cellar/tmux/2.7/bin/mtx"
 elif [[ $linux == true ]]; then
     alias ls="ls --color=auto"
@@ -176,5 +173,9 @@ alias cdaq="cd ~/moos-ivp-aquaticus/missions/aquaticus2.0"
 # I will eventually memorize this and remove it.
 alias fix_perms='echo "chmod -R u=rwX,go=rX"'
 alias ktm="(ktm &)"
+alias sl="ls"
+function gorm {
+    rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
+}
 
 alias r=". ~/.bashrc"
