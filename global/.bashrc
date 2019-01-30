@@ -26,8 +26,8 @@ export PATH
 export GOPATH
 
 # Aquaticus
-export LIBRARY_PATH=/opt/local/lib
-export IVP_BEHAVIOR_DIRS=$HOME/moos-ivp/lib:$HOME/moos-ivp-erik/lib:$HOME/moos-ivp-aquaticus/lib
+#export LIBRARY_PATH=/opt/local/lib
+#export IVP_BEHAVIOR_DIRS=$HOME/moos-ivp/lib:$HOME/moos-ivp-erik/lib:$HOME/moos-ivp-aquaticus/lib
 
 unset PROMPT_COMMAND
 
