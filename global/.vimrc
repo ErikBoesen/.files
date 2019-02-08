@@ -44,6 +44,11 @@ hi Normal guibg=NONE ctermbg=NONE
 " Remove trailing whitespace on write
 autocmd BufWritePre * %s/\s\+$//e
 
+" Recognize racket as scheme
+if has("autocmd")
+    au BufReadPost *.rkt,*.rktl set filetype=scheme
+endif
+
 map <F7> mzgg=G`z " Reindent entire file
 map r :source ~/.vimrc<CR>
 map [ gT<CR>
