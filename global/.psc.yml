@@ -7,4 +7,5 @@ remove_redundant_semester: true
 show_last_week_attendance: false
 show_this_week_attendance: true
 show_attendance_totals: false
+strip_levels: true
 thresholds: {high: 95, medium: 90}
