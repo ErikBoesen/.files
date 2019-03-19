@@ -146,6 +146,8 @@ alias cdaq='cd ~/moos-ivp-aquaticus/missions/aquaticus2.0'
 alias fix_perms='echo "chmod -R u=rwX,go=rX"'
 alias ktm='(ktm &)'
 alias sl='ls'
+alias 1418='wif connect -n 1418'
+alias stud='wif connect -n FCCPS-GMSTUDENT1819'
 function gorm {
     rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
 }
