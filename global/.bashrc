@@ -103,7 +103,9 @@ elif [[ $linux == true ]]; then
     function wallpaper {
         gsettings set org.gnome.desktop.background picture-uri file://"$(realpath "$1")"
     }
-
+    function lockscreen {
+        gsettings set org.gnome.desktop.screensaver picture-uri file://"$(realpath "$1")"
+    }
     alias suspend='systemctl suspend'
     alias pbcopy='xsel --clipboard --input'
     alias pbpaste='xsel --clipboard --output'
