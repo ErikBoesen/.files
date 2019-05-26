@@ -165,3 +165,5 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AUdioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+exec_always feh --bg-fit ~/.wallpaper.jpg
