@@ -92,10 +92,6 @@ if [[ $mac == true ]]; then
 
     function vup   { ssh mir -T "pamixer --increase $1"; }
     function vdown { ssh mir -T "pamixer --decrease $1"; }
-    alias vim="$HOME/.local/homebrew/bin/vim"
-
-    # Circumvent GMHS tmux blacklisting
-    alias tmux="$HOME/.local/homebrew/Cellar/tmux/2.7/bin/mtx"
 elif [[ $linux == true ]]; then
     alias ls='ls --color=auto'
     alias l='ls -lah --color=auto'
