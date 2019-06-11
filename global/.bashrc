@@ -147,4 +147,8 @@ function gorm {
     rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
 }
 
+function fgc {
+    git commit -m "$(git diff --cached --name-only): $2"
+}
+
 alias r='. ~/.bashrc'
