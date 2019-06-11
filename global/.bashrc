@@ -93,6 +93,8 @@ if [[ $mac == true ]]; then
 
     function vup   { ssh mir -T "pamixer --increase $1"; }
     function vdown { ssh mir -T "pamixer --decrease $1"; }
+
+    eval $(minikube docker-env)
 elif [[ $linux == true ]]; then
     alias ls='ls --color=auto'
     alias l='ls -lah --color=auto'
