@@ -10,7 +10,6 @@ if [[ $mac == true ]]; then
     PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
     PATH=$PATH:$HOME/Library/Python/3.6/bin
     PATH=$PATH:/usr/local/texlive/2018/bin/x86_64-darwin
-    PATH=$PATH:$HOME/moos-ivp/bin:$HOME/moos-ivp-erik/bin
     PATH=$PATH:$HOME/.rvm/bin
     PATH=$PATH:$HOME/.rvm/gems/ruby-2.4.4/bin
     GOPATH=$HOME/.local/go
@@ -18,8 +17,6 @@ elif [[ $linux == true ]]; then
     PATH=$PATH:$HOME/.gem/ruby/2.4.0/bin
     PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin
 fi
-PATH=$PATH:$HOME/moos-ivp/bin:$HOME/moos-ivp-erik/bin:$HOME/moos-ivp-aquaticus/bin
-PATH=$PATH:$HOME/Qt/5.11.1/clang_64/bin
 
 PATH=$PATH:$GOPATH/bin
 export PATH
@@ -27,12 +24,6 @@ export GOPATH
 
 # Account for multiple versions of Java being installed for envy
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-
-export TESSDATA_PREFIX="$HOME/.local/homebrew/share/tessdata/"
-
-# Aquaticus
-#export LIBRARY_PATH=/opt/local/lib
-#export IVP_BEHAVIOR_DIRS=$HOME/moos-ivp/lib:$HOME/moos-ivp-erik/lib:$HOME/moos-ivp-aquaticus/lib
 
 unset PROMPT_COMMAND
 
@@ -146,7 +137,6 @@ alias gsta='git stash save'
 alias gstp='git stash pop'
 
 alias texclean='rm -fv *.{aux,bbl,blg,log,out,pdf,synctex.gz,pyg,fls,fdb_latexmk,dvi}'
-alias cdaq='cd ~/moos-ivp-aquaticus/missions/aquaticus2.0'
 # I will eventually memorize this and remove it.
 alias fix_perms='echo "chmod -R u=rwX,go=rX"'
 alias ktm='(ktm &)'
