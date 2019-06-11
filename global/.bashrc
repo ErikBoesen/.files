@@ -3,10 +3,9 @@
 [[ $(uname) == "Darwin" ]] && mac=true
 [[ $(uname) == "Linux"  ]] && linux=true
 
-PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
 GOPATH=/usr/local/go
 if [[ $mac == true ]]; then
-    export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
     PATH=$PATH:$HOME/.local/homebrew/bin
     PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
     PATH=$PATH:$HOME/Library/Python/3.6/bin
@@ -25,6 +24,9 @@ PATH=$PATH:$HOME/Qt/5.11.1/clang_64/bin
 PATH=$PATH:$GOPATH/bin
 export PATH
 export GOPATH
+
+# Account for multiple versions of Java being installed for envy
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 export TESSDATA_PREFIX="$HOME/.local/homebrew/share/tessdata/"
 
