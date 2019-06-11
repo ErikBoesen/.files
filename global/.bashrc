@@ -139,10 +139,7 @@ alias gstp='git stash pop'
 alias texclean='rm -fv *.{aux,bbl,blg,log,out,pdf,synctex.gz,pyg,fls,fdb_latexmk,dvi}'
 # I will eventually memorize this and remove it.
 alias fix_perms='echo "chmod -R u=rwX,go=rX"'
-alias ktm='(ktm &)'
 alias sl='ls'
-alias 1418='wif connect -n 1418'
-alias stud='wif connect -n FCCPS-GMSTUDENT1819'
 function gorm {
     rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
 }
