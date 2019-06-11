@@ -7,14 +7,12 @@ PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
 GOPATH=/usr/local/go
 if [[ $mac == true ]]; then
     PATH=$PATH:$HOME/.local/homebrew/bin
-    PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
     PATH=$PATH:$HOME/Library/Python/3.6/bin
     PATH=$PATH:/usr/local/texlive/2018/bin/x86_64-darwin
     PATH=$PATH:$HOME/.rvm/bin
     PATH=$PATH:$HOME/.rvm/gems/ruby-2.4.4/bin
     GOPATH=$HOME/.local/go
 elif [[ $linux == true ]]; then
-    PATH=$PATH:$HOME/.gem/ruby/2.4.0/bin
     PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin
 fi
 
@@ -75,7 +73,6 @@ PROMPT_COMMAND="chpwd \$?;$PROMPT_COMMAND"
 if [[ $mac == true ]]; then
     alias ls='ls -G'
     alias l='ls -Glah'
-    alias burn='git clone https://github.com/ErikBoesen/burn ~/burn; ~/burn/burn.sh'
 
     alias slp='pmset sleepnow'
     alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
@@ -144,7 +141,7 @@ function gorm {
     rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
 }
 
-function fgc {
+function pgc {
     git commit -m "$(git diff --cached --name-only): $2"
 }
 
