@@ -6,6 +6,7 @@
 PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
 GOPATH=/usr/local/go
 if [[ $mac == true ]]; then
+    export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
     PATH=$PATH:$HOME/.local/homebrew/bin
     PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
     PATH=$PATH:$HOME/Library/Python/3.6/bin
