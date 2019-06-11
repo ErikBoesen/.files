@@ -1,11 +1,8 @@
 [user]
     name = ErikBoesen
     email = me@erikboesen.com
-    signingkey = AE87239A4A8A2A1A
 [credential]
     helper = store
-[commit]
-    gpgsign = true
 [core]
     whitespace = warn
     autocrlf = input
