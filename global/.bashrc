@@ -307,3 +307,4 @@ envy_db_restore() {
   gunzip -c ~/tmp/db_snapshots/mysqldump_dev.sql.gz | $mysql -h localenv.ninja -u schoologydev --password="schoologydev" --port $port
 }
 
+alias scho="cd $HOME/envy/systems/schoology/lib/sgy-shared/src/sgy-core/schoology"
