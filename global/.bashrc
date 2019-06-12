@@ -151,3 +151,159 @@ alias r='. ~/.bashrc'
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+# Seamus' functions
+envy_mysql_port() {
+  local port="$(kubectl get service | grep percona | awk '{print $5}' | cut -c 6-10)"
+  echo $port;
+}
+
+mysql_envy() {
+  local port="$(envy_mysql_port)"
+  mysql -h localenv.ninja --port $port -u schoologydev --password="schoologydev" --database schoology
+}
+
+
+mysql_client_path() {
+  echo $(which mysql)
+}
+
+envy_db_dump() {
+  local dump="$(mysql_client_path)"
+  local port="$(envy_mysql_port)"
+  mkdir -p ~/tmp/db_snapshots
+  $dump -h localenv.ninja -u schoologydev --password="schoologydev" --port $port \
+    --database schoology schoology_acl schoology_assessment schoology_cache \
+      schoology_common_assessment_submissions schoology_common_assessments \
+      schoology_course_completion schoology_media_files schoology_messaging_acl schoology_oauth schoology_part_1 scorm_engine \
+     > ~/tmp/db_snapshots/mysqldump_dev.sql && gzip -f ~/tmp/db_snapshots/mysqldump_dev.sql
+}
+
+envy_db_restore() {
+  local mysql="$(which mysql)"
+  local port="$(kubectl get service | grep percona | awk '{print $5}' | cut -c 6-10)"
+  gunzip -c ~/tmp/db_snapshots/mysqldump_dev.sql.gz | $mysql -h localenv.ninja -u schoologydev --password="schoologydev" --port $port
+}
+
+
+alias envy-fix-date='minikube ssh -- sudo date -u $(date -u +%m%d%H%M%Y.%S)'
+
+pen() {
+  pods=( $(gp | grep "$1" | awk '{print $1}') )
+  echo Entering "${pods[0]}"
+  kubectl exec -it "${pods[0]}" sh
+}
+
+migrate() {
+  pods=( $(gp | grep "sgy-web" | awk '{print $1}') )
+  echo migrating for "${pods[0]}"
+  kubectl exec "${pods[0]}" -- bash -c "cd /var/www/html/schoology/docroot/ && sh .curio/migrate.sh"
+}
+
+search() {
+  pods=( $(gp | grep "web" | awk '{print $1}') )
+  echo Reindexing search for "${pods[0]}"
+  kubectl exec "${pods[0]}" -- bash -c "cd /var/www/html/schoology/docroot/scripts/search && php-cgi es-reindex.php"
+}
+
+k-bootstrap-selenium() {
+  cde && helm del --purge selenium &>/dev/null && helm install --name selenium -f envy_values.yaml systems/selenium/helm/selenium &>/dev/null &&
+  nohup kubectl port-forward $(kubectl get pods -l app=selenium-node -o jsonpath='{ .items[0].metadata.name }') 5901:5900 &>/dev/null & echo 'port-forwarding' &&
+  # get web pod
+  pods=( $(gp | grep "web" | awk '{print $1}') )
+  echo entering "${pods[0]} and running @testing"
+  kubectl exec "${pods[0]}" -- bash -c "cd /var/www/html/schoology/docroot/ && ./scripts/run-automation-suite.php run -c  bdd.yml bdd -g testing --env envy --debug"
+}
+
+alias k-start-cassandra='kubectl scale statefulsets envy-base-cassandra --replicas=1'
+alias k-stop-cassandra='kubectl scale statefulsets envy-base-cassandra --replicas=0'
+
+alias k-stop-selenium='kubectl scale deploy selenium --replicas=0 && kubectl scale deploy selenium-node --replicas=0'
+alias k-stop-scoreable='kubectl scale deploy schoology-scoreable-service --replicas=0 && kubectl scale deploy selenium-node --replicas=0'
+
+# k-stop-events-pipeline() {
+#   deployments=( $(gd | grep "eventspipeline" | awk '{print $1}') )
+#   for deployment in "${deployments[@]}"
+#   do
+#     echo "removing deployment ${deployment}"
+#     kubectl scale deploy "${deployment}" --replicas=0
+#   done;
+# }
+
+k-stop-fuzzy() {
+  deployments=( $(kubectl get deployments | grep "$1" | awk '{print $1}') )
+  for deployment in "${deployments[@]}"
+  do
+    echo "seamus says: removing deployment ${deployment}"
+    kubectl scale deploy "${deployment}" --replicas=0
+  done;
+}
+
+k-start-fuzzy() {
+  deployments=( $(kubectl get deployments | grep "$1" | awk '{print $1}') )
+  for deployment in "${deployments[@]}"
+  do
+    echo "adding deployment ${deployment}"
+    kubectl scale deploy "${deployment}" --replicas=1
+  done;
+}
+
+# schema()
+# {
+#   pods=( $(gp | grep "web" | awk '{print $1}') )
+#   echo running schema updates via for "${pods[0]}"
+#   cds && kubectl exec "${pods[0]}" -- bash -c 'php-cgi /var/www/html/schoology/docroot/updates_auto.php updates_tests=1 cli_key=MUWSvxf9RurT3sdAuktLPeww'
+# }
+
+plog-web() {
+  pods=( $(gp | grep "sgy-web" | awk '{print $1}') )
+  cde && kubectl exec "${pods[0]}" -- bash -c 'tail -n 50 -f /var/log/schoology/watchdog.log'
+}
+
+plog() {
+  pods=( $(gp | grep "$1" | awk '{print $1}') )
+  cde && kubectl log "${pods[0]}" -f --tail=100
+}
+
+podrm() {
+ pods=( $(kubectl get pods | grep "$1" | awk '{print $1}') )
+ for pod in "${pods[@]}"
+ do
+   echo "removing pod ${pod}"
+   kubectl delete pod "${pod}"
+ done;
+}
+
+#DB BACKUP/RESTORE
+envy_mysql_port() {
+  local port="$(kubectl get service | grep percona | awk '{print $5}' | cut -c 6-10)"
+  echo $port;
+}
+
+mysql_envy() {
+  local port="$(envy_mysql_port)"
+  mysql -h localenv.ninja --port $port -u schoologydev --password="schoologydev" --database schoology
+}
+
+
+mysql_client_path() {
+  echo $(which mysql)
+}
+
+envy_db_dump() {
+  local dump="$(mysql_client_path)"
+  local port="$(envy_mysql_port)"
+  mkdir -p ~/tmp/db_snapshots
+  $dump -h localenv.ninja -u schoologydev --password="schoologydev" --port $port \
+    --database schoology schoology_acl schoology_assessment schoology_cache \
+      schoology_common_assessment_submissions schoology_common_assessments \
+      schoology_course_completion schoology_media_files schoology_messaging_acl schoology_oauth schoology_part_1 scorm_engine \
+     > ~/tmp/db_snapshots/mysqldump_dev.sql && gzip -f ~/tmp/db_snapshots/mysqldump_dev.sql
+}
+
+envy_db_restore() {
+  local mysql="$(which mysql)"
+  local port="$(kubectl get service | grep percona | awk '{print $5}' | cut -c 6-10)"
+  gunzip -c ~/tmp/db_snapshots/mysqldump_dev.sql.gz | $mysql -h localenv.ninja -u schoologydev --password="schoologydev" --port $port
+}
+
