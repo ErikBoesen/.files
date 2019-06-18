@@ -1,8 +1,0 @@
-#!/bin/bash
-
-ssh root@localhost -T <<'EOT'
-echo "Reprimiendo como $(whoami)..."
-for ((;;)); do
-    killall jamf jamfAgent 2>/dev/null
-done
-EOT
