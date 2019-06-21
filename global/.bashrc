@@ -311,3 +311,4 @@ envy_db_restore() {
 alias scho="cd $HOME/envy/systems/schoology/lib/sgy-shared/src/sgy-core/schoology"
 export NODE_ENV=dev
 export SCHOOLOGY_API_BASE="https://api.localenv.ninja/v1"
+export ENVY_ROOT="$HOME/envy"
