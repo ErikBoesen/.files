@@ -26,6 +26,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'lervag/vimtex'
 Plugin 'darfink/vim-plist'
 Plugin 'airblade/vim-gitgutter'
+"Plugin 'Valloric/YouCompleteMe'
+"let g:ycm_autoclose_preview_window_after_completion = 1
 " Theme
 Plugin 'ErikBoesen/vim-brogrammer-theme'
 
