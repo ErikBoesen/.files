@@ -1,13 +1,10 @@
 .DS_Store
 
 # vim saves
-*.swp
-*.swo
-*.swn
-*.swm
-*.swl
-*.swk
-*.swj
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
 
 *.out
 .svn
