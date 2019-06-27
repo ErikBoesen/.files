@@ -14,6 +14,8 @@ set backspace=2
 "set mouse=a
 " Allow opening more tabs
 set tabpagemax=256
+set autoread
+au CursorHold,CursorHoldI * checktime
 
 " --- Vundle ---
 set nocompatible
