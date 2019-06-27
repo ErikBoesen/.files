@@ -275,6 +275,7 @@ podrm() {
  done;
 }
 
+
 #DB BACKUP/RESTORE
 envy_mysql_port() {
   local port="$(kubectl get service | grep percona | awk '{print $5}' | cut -c 6-10)"
@@ -312,3 +313,8 @@ alias scho="cd $HOME/envy/systems/schoology/lib/sgy-shared/src/sgy-core/schoolog
 export NODE_ENV=dev
 export SCHOOLOGY_API_BASE="https://api.localenv.ninja/v1"
 export ENVY_ROOT="$HOME/envy"
+. ~/.aws_functions.sh
+
+envy() {
+    (cd $ENVY_ROOT && ENVY $@)
+}
