@@ -318,3 +318,4 @@ export ENVY_ROOT="$HOME/envy"
 envy() {
     (cd $ENVY_ROOT && ENVY $@)
 }
+alias dist='rm -rf dist && python3 setup.py sdist && ~/Library/Python/3.7/bin/twine upload dist/*'
