@@ -19,6 +19,9 @@ set scrolloff=0
 " Autoreload
 set autoread
 au CursorHold,CursorHoldI * checktime
+" Set up file browser
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
 
 " --- Vundle ---
 set nocompatible
