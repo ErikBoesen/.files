@@ -315,7 +315,4 @@ export SCHOOLOGY_API_BASE="https://api.localenv.ninja/v1"
 export ENVY_ROOT="$HOME/envy"
 . ~/.aws_functions.sh
 
-envy() {
-    (cd $ENVY_ROOT && ENVY $@)
-}
 alias dist='rm -rf dist && python3 setup.py sdist && ~/Library/Python/3.7/bin/twine upload dist/*'
