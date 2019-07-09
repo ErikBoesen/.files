@@ -146,6 +146,10 @@ function pgc {
     git commit -m "$(git diff --cached --name-only): $2"
 }
 
+function cgc {
+    git commit -m "$1($2): $3 $(git rev-parse --abbrev-ref HEAD)"
+}
+
 alias r='. ~/.bashrc'
 
 # NVM
