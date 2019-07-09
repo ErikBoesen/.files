@@ -55,5 +55,3 @@ endif
 
 map <F7> mzgg=G`z " Reindent entire file
 map r :source ~/.vimrc<CR>
-map [ gT<CR>
-map ] gt<CR>
