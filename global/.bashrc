@@ -320,3 +320,10 @@ export ENVY_ROOT="$HOME/envy"
 . ~/.aws_functions.sh
 
 alias dist='rm -rf dist && python3 setup.py sdist && ~/Library/Python/3.7/bin/twine upload dist/*'
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /Users/eboesen/mastery/node_modules/tabtab/.completions/serverless.bash ] && . /Users/eboesen/mastery/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /Users/eboesen/mastery/node_modules/tabtab/.completions/sls.bash ] && . /Users/eboesen/mastery/node_modules/tabtab/.completions/sls.bash
