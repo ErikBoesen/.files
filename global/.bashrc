@@ -357,3 +357,12 @@ k-scale-down-to-essential-pods() {
   k-scale attributes 0;
   k-scale scorm 0;
 }
+
+update_ngrok_config() {
+  config_dir="$ENVY_ROOT/systems/schoology/lib/sgy-shared/data/sgy-core/config/sgy-core"
+  config_file="settings_custom.php"
+  temp_dir="/tmp"
+  grep -v "ngrok" $config_dir/$config_file > $temp_dir/$config_file
+  echo "$conf['district_mastery']['domain'] = 'https://$1.ngrok.io';" >> $temp_dir/$config_file
+  mv $temp_dir/$config_file $config_dir/$config_file
+}
