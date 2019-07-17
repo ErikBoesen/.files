@@ -32,7 +32,7 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 export EDITOR=vim
 
-umask 077
+umask 002
 
 function dir_prompt {
     if [[ -d .git ]] || git rev-parse --git-dir &>/dev/null; then
