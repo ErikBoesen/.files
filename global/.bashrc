@@ -328,3 +328,32 @@ alias dist='rm -rf dist && python3 setup.py sdist && ~/Library/Python/3.7/bin/tw
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [ -f /Users/eboesen/mastery/node_modules/tabtab/.completions/sls.bash ] && . /Users/eboesen/mastery/node_modules/tabtab/.completions/sls.bash
+
+# Scale deployment or statefulset up or down
+# Example usage: k-scale cassandra 0
+k-scale() {
+  ss=( $(kubectl get statefulset | grep "$1" | awk '{print $1}') )
+  for dep in "${ss[@]}"
+  do
+    kubectl scale statefulset "$dep" --replicas="$2"
+  done;
+
+  deployments=( $(kubectl get deployments | grep "$1" | awk '{print $1}') )
+  for dep in "${deployments[@]}"
+  do
+    kubectl scale deployment "$dep" --replicas="$2"
+  done;
+}
+
+# Scale Envy down to essential pods that serves Sgy site
+k-scale-down-to-essential-pods() {
+  k-scale cassandra 0;
+  k-scale pipeline 0;
+  k-scale files 0;
+  k-scale portfolio 0;
+  k-scale solr 0;
+  k-scale mongo 0;
+  k-scale elasticsearch 0;
+  k-scale attributes 0;
+  k-scale scorm 0;
+}
