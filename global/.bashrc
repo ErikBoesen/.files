@@ -200,19 +200,19 @@ envy_db_restore() {
 alias envy-fix-date='minikube ssh -- sudo date -u $(date -u +%m%d%H%M%Y.%S)'
 
 pen() {
-  pods=( $(gp | grep "$1" | awk '{print $1}') )
+  pods=( $(kubectl get pods | grep "$1" | awk '{print $1}') )
   echo Entering "${pods[0]}"
   kubectl exec -it "${pods[0]}" sh
 }
 
 migrate() {
-  pods=( $(gp | grep "sgy-web" | awk '{print $1}') )
+  pods=( $(kubectl get pods | grep "sgy-web" | awk '{print $1}') )
   echo migrating for "${pods[0]}"
   kubectl exec "${pods[0]}" -- bash -c "cd /var/www/html/schoology/docroot/ && sh .curio/migrate.sh"
 }
 
 search() {
-  pods=( $(gp | grep "web" | awk '{print $1}') )
+  pods=( $(kubectl get pods | grep "web" | awk '{print $1}') )
   echo Reindexing search for "${pods[0]}"
   kubectl exec "${pods[0]}" -- bash -c "cd /var/www/html/schoology/docroot/scripts/search && php-cgi es-reindex.php"
 }
@@ -221,7 +221,7 @@ k-bootstrap-selenium() {
   cde && helm del --purge selenium &>/dev/null && helm install --name selenium -f envy_values.yaml systems/selenium/helm/selenium &>/dev/null &&
   nohup kubectl port-forward $(kubectl get pods -l app=selenium-node -o jsonpath='{ .items[0].metadata.name }') 5901:5900 &>/dev/null & echo 'port-forwarding' &&
   # get web pod
-  pods=( $(gp | grep "web" | awk '{print $1}') )
+  pods=( $(kubectl get pods | grep "web" | awk '{print $1}') )
   echo entering "${pods[0]} and running @testing"
   kubectl exec "${pods[0]}" -- bash -c "cd /var/www/html/schoology/docroot/ && ./scripts/run-automation-suite.php run -c  bdd.yml bdd -g testing --env envy --debug"
 }
@@ -261,18 +261,18 @@ k-start-fuzzy() {
 
 # schema()
 # {
-#   pods=( $(gp | grep "web" | awk '{print $1}') )
+#   pods=( $(kubectl get pods | grep "web" | awk '{print $1}') )
 #   echo running schema updates via for "${pods[0]}"
 #   cds && kubectl exec "${pods[0]}" -- bash -c 'php-cgi /var/www/html/schoology/docroot/updates_auto.php updates_tests=1 cli_key=MUWSvxf9RurT3sdAuktLPeww'
 # }
-
+alias cde="cd $ENVY_ROOT"
 plog-web() {
-  pods=( $(gp | grep "sgy-web" | awk '{print $1}') )
-  cde && kubectl exec "${pods[0]}" -- bash -c 'tail -n 50 -f /var/log/schoology/watchdog.log'
+  pods=( $(kubectl get pods | grep "sgy-web" | awk '{print $1}') )
+  cde && kubectl exec "${pods[0]}" -- bash -c 'tail -n 5000 -f /var/log/schoology/watchdog.log'
 }
 
 plog() {
-  pods=( $(gp | grep "$1" | awk '{print $1}') )
+  pods=( $(kubectl get pods | grep "$1" | awk '{print $1}') )
   cde && kubectl log "${pods[0]}" -f --tail=100
 }
 
