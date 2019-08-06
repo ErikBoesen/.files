@@ -372,3 +372,10 @@ update_ngrok_config() {
   echo "\$conf['district_mastery']['domain'] = 'https://$1.ngrok.io';" >> $temp_dir/$config_file
   mv $temp_dir/$config_file $config_dir/$config_file
 }
+
+freak() {
+    for ((;;)); do
+        echo -e "\a"
+        sleep 0.5
+    done
+}
