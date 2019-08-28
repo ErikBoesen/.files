@@ -1,5 +1,0 @@
-export TBAKEY=""
-
-export DE_ROBOT_NETWORK_SSID=
-export DE_ROBOT_NETWORK_PSK=""
-export DE_START_NETWORK_PSK=""
