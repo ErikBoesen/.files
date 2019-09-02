@@ -7,10 +7,6 @@ PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
 GOPATH=/usr/local/go
 if [[ $mac == true ]]; then
     PATH=$PATH:$HOME/.local/homebrew/bin
-    PATH=$PATH:$HOME/Library/Python/3.6/bin
-    PATH=$PATH:/usr/local/texlive/2018/bin/x86_64-darwin
-    PATH=$PATH:$HOME/.rvm/bin
-    PATH=$PATH:$HOME/.rvm/gems/ruby-2.4.4/bin
     PATH=$PATH:$HOME/Library/Python/3.7/bin
     PATH=$PATH:/usr/local/texlive/2019/bin/x86_64-darwin
     GOPATH=$HOME/.local/go
@@ -132,7 +128,7 @@ alias glo='git log --oneline --decorate'
 alias gsta='git stash save'
 alias gstp='git stash pop'
 
-alias texclean='rm -fv *.{aux,bbl,blg,log,out,pdf,synctex.gz,pyg,fls,fdb_latexmk,dvi}'
+alias texclean='rm -fv *.{aux,bbl,blg,log,out,synctex.gz,pyg,fls,fdb_latexmk,dvi}'
 # I will eventually memorize this and remove it.
 alias fix_perms='echo "chmod -R u=rwX,go=rX"'
 alias sl='ls'
