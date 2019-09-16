@@ -133,7 +133,7 @@ alias texclean='rm -fv *.{aux,bbl,blg,log,out,synctex.gz,pyg,fls,fdb_latexmk,dvi
 # I will eventually memorize this and remove it.
 alias fix_perms='echo "chmod -R u=rwX,go=rX"'
 alias sl='ls'
-alias dist='rm -rf dist && python3 setup.py sdist && ~/Library/Python/3.7/bin/twine upload dist/*'
+alias dist='rm -rf dist && python3 setup.py sdist && twine upload dist/*'
 
 function gorm {
     rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
