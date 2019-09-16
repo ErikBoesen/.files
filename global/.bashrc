@@ -9,6 +9,7 @@ if [[ $mac == true ]]; then
     PATH=$PATH:$HOME/.local/homebrew/bin
     PATH=$PATH:$HOME/Library/Python/3.7/bin
     PATH=$PATH:/usr/local/texlive/2019/bin/x86_64-darwin
+    PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
     GOPATH=$HOME/.local/go
 elif [[ $linux == true ]]; then
     PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin
