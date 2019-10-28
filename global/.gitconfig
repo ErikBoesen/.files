@@ -9,5 +9,7 @@
     excludesfile = ~/.gitignore
 [github]
 	user = ErikBoesen
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
 [ghi]
 	token = !security find-internet-password -a ErikBoesen -s github.com -l 'ghi token' -w
