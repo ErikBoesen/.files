@@ -23,6 +23,8 @@ unset PROMPT_COMMAND
 # Instantly append commands to history
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+# Prevent duplicate adjacent commands
+export HISTCONTROL=ignoreboth:erasedups
 
 export EDITOR=vim
 
