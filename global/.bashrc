@@ -131,6 +131,7 @@ alias glo='git log --oneline --decorate'
 alias gsta='git stash save'
 alias gstp='git stash pop'
 
+alias dsw='find . -iname ".*.sw*" -delete'
 alias texclean='rm -fv *.{aux,bbl,blg,log,out,synctex.gz,pyg,fls,fdb_latexmk,dvi}'
 # I will eventually memorize this and remove it.
 alias fix_perms='echo "chmod -R u=rwX,go=rX"'
