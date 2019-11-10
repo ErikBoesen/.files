@@ -12,6 +12,8 @@ if [[ $mac == true ]]; then
     PATH=$PATH:/usr/local/texlive/2019/bin/x86_64-darwin
     PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
     PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+    PATH=$PATH:$HOME/.rvm/bin
+
 elif [[ $linux == true ]]; then
     PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin
 fi
