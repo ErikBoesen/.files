@@ -5,12 +5,13 @@
 
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
 GOPATH=/usr/local/go
+ANDROID_HOME=$HOME/Library/Android/sdk
 if [[ $mac == true ]]; then
     PATH=$PATH:$HOME/.local/homebrew/bin
     PATH=$PATH:$HOME/Library/Python/3.7/bin
     PATH=$PATH:/usr/local/texlive/2019/bin/x86_64-darwin
     PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
-    PATH=$PATH:/Applications/microchip/xc16/v1.24/bin
+    PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 elif [[ $linux == true ]]; then
     PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin
 fi
@@ -18,6 +19,7 @@ fi
 PATH=$PATH:$GOPATH/bin
 export PATH
 export GOPATH
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
 
 unset PROMPT_COMMAND
 # Instantly append commands to history
