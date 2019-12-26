@@ -142,6 +142,11 @@ alias fix_perms='echo "chmod -R u=rwX,go=rX"'
 alias sl='ls'
 alias dist='rm -rf dist && python3 setup.py sdist && twine upload dist/*'
 
+alias ctlc='wc -l $(find . -name "*.py" | xargs) Procfile *.sh'
+alias nr="native-run android --app $HOME/src/Comethru/app/platforms/android/app/build/outputs/apk/debug/app-debug.apk"
+alias nrd="native-run android --app $HOME/src/Comethru/app/platforms/android/app/build/outputs/apk/debug/app-debug.apk --debug"
+alias hl="heroku logs -t"
+
 function gorm {
     rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
 }
