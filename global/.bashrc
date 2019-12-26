@@ -13,7 +13,7 @@ if [[ $mac == true ]]; then
     PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
     PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
     PATH=$PATH:$HOME/.rvm/bin
-
+    PATH=$PATH:$HOME/Library/Android/sdk/build-tools/29.0.2
 elif [[ $linux == true ]]; then
     PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin
 fi
