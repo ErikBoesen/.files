@@ -22,8 +22,6 @@ set backspace=2
 "set mouse=a
 " Allow opening more tabs
 set tabpagemax=256
-" Prevent scrolling far off screen
-set scrolloff=0
 " Autoreload
 set autoread
 au CursorHold,CursorHoldI * checktime
