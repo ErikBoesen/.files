@@ -3,7 +3,7 @@
 [[ $(uname) == "Darwin" ]] && mac=true
 [[ $(uname) == "Linux"  ]] && linux=true
 
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin
 ANDROID_HOME=$HOME/Library/Android/sdk
 if [[ $mac == true ]]; then
     PATH=$PATH:$HOME/Library/Python/3.7/bin
