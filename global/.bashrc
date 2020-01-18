@@ -119,7 +119,6 @@ function essh {
 
 alias r='. ~/.bashrc'
 alias git='hub'
-alias g='git'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
@@ -132,17 +131,12 @@ alias gst='git status -s' # Standard ZSH alias doesn't use -s
 alias gs='git status -s' # Account for missing t key
 alias gd='git diff'
 alias glo='git log --oneline --decorate'
-alias gsta='git stash save'
-alias gstp='git stash pop'
 
 alias dsw='find . -iname ".*.sw*" -delete'
 alias texclean='rm -fv *.{aux,bbl,blg,log,out,synctex.gz,pyg,fls,fdb_latexmk,dvi}'
-# I will eventually memorize this and remove it.
-alias fix_perms='echo "chmod -R u=rwX,go=rX"'
 alias sl='ls'
 alias dist='rm -rf dist && python3 setup.py sdist && twine upload dist/*'
 
-alias ctlc='wc -l $(find . -name "*.py" | xargs) Procfile *.sh'
 alias nr="native-run android --app $HOME/src/Comethru/app/platforms/android/app/build/outputs/apk/debug/app-debug.apk"
 alias nrd="native-run android --app $HOME/src/Comethru/app/platforms/android/app/build/outputs/apk/debug/app-debug.apk --debug"
 alias hl="heroku logs -t"
