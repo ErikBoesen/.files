@@ -142,10 +142,6 @@ alias nrd="native-run android --app $HOME/src/Comethru/app/platforms/android/app
 alias hl="heroku logs -t"
 alias hls="heroku logs -t --source=app"
 
-function gorm {
-    rm -rf $GOPATH/{pkg/*/*/*/$1.*,src/*/*/$1} 2>/dev/null
-}
-
 function pgc {
     git commit -m "$(git diff --cached --name-only): $2"
 }
