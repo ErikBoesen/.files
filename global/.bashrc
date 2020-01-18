@@ -76,7 +76,6 @@ if [[ $mac == true ]]; then
     alias l='ls -Glah'
 
     alias slp='pmset sleepnow'
-    alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
     # Preview images
     function eog {
         (qlmanage -p $@ &>/dev/null &)
