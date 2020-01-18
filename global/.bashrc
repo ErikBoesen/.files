@@ -83,17 +83,9 @@ if [[ $mac == true ]]; then
 elif [[ $linux == true ]]; then
     alias ls='ls --color=auto'
     alias l='ls -lah --color=auto'
-    function wallpaper {
-        gsettings set org.gnome.desktop.background picture-uri file://"$(realpath "$1")"
-    }
-    function lockscreen {
-        gsettings set org.gnome.desktop.screensaver picture-uri file://"$(realpath "$1")"
-    }
     alias suspend='systemctl suspend'
     alias pbcopy='xsel --clipboard --input'
     alias pbpaste='xsel --clipboard --output'
-    alias vup='pamixer --increase'
-    alias vdown='pamixer --decrease'
 fi
 
 alias r='. ~/.bashrc'
