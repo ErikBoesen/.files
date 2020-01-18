@@ -101,22 +101,6 @@ elif [[ $linux == true ]]; then
     alias vdown='pamixer --decrease'
 fi
 
-function espera {
-    chars="-\\|/"
-    tries=0
-    while ! ping -t 1 -c 1 -n "$1" &> /dev/null; do
-        ((tries++))
-        printf "\r\e[0m$1 \e[32m${chars:$((tries%4)):1}"
-        sleep 0.2
-    done
-    printf "\r"
-}
-function essh {
-    # Espera hasta que esté listo pa conectarse
-    # TODO: Strip username and/or read from SSH config
-    espera "$1" && ssh "$1"
-}
-
 alias r='. ~/.bashrc'
 alias git='hub'
 alias ga='git add'
