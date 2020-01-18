@@ -4,7 +4,6 @@
 [[ $(uname) == "Linux"  ]] && linux=true
 
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$HOME/.local/bin
-GOPATH=/usr/local/go
 ANDROID_HOME=$HOME/Library/Android/sdk
 if [[ $mac == true ]]; then
     PATH=$PATH:$HOME/.local/homebrew/bin
@@ -18,9 +17,7 @@ elif [[ $linux == true ]]; then
     PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin
 fi
 
-PATH=$PATH:$GOPATH/bin
 export PATH
-export GOPATH
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
 
 unset PROMPT_COMMAND
