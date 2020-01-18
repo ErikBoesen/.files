@@ -154,13 +154,6 @@ function cg {
     git commit -m "$type($scope): $@ $(git rev-parse --abbrev-ref HEAD)"
 }
 
-freak() {
-    for ((;;)); do
-        echo -e "\a"
-        sleep 0.5
-    done
-}
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
