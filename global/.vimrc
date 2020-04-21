@@ -63,3 +63,6 @@ map <F7> mzgg=G`z " Reindent entire file
 
 command RE :source ~/.vimrc
 command K w || ! racket "%"
+
+" Disable "entering ex mode" keystroke
+map Q <Nop>
