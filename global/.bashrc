@@ -48,13 +48,10 @@ function dir_prompt {
         printf "\[\e[34m\]\W\[\e[0m\]"
     fi
 }
-char="_"
-if [[ $mac == true ]]; then
-    char=">"
-elif [[ $linux == true ]]; then
-    char="$"
-    #char="∑"
-fi
+
+char="𓆉  "
+char="𓆃  "
+
 function status_prompt {
     if [[ $1 -eq 0 ]]; then
         printf "\[\e[32m\]"
