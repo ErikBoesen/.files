@@ -121,4 +121,9 @@ function cg {
     git commit -m "$type($scope): $@ $(git rev-parse --abbrev-ref HEAD)"
 }
 
+# SGY
 eval $(minikube docker-env)
+function envy {
+    (cd $HOME/envy && ./envy $@)
+}
+
