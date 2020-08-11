@@ -37,7 +37,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
-Plugin 'lervag/vimtex'
+"Plugin 'lervag/vimtex'
 Plugin 'darfink/vim-plist'
 Plugin 'airblade/vim-gitgutter'
 "Plugin 'Valloric/YouCompleteMe'
