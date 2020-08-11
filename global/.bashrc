@@ -120,3 +120,5 @@ function cg {
     shift
     git commit -m "$type($scope): $@ $(git rev-parse --abbrev-ref HEAD)"
 }
+
+eval $(minikube docker-env)
