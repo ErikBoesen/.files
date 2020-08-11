@@ -20,7 +20,7 @@ fi
 export PATH
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
 
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 
 unset PROMPT_COMMAND
 # Instantly append commands to history
