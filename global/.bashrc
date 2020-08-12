@@ -123,7 +123,3 @@ function cg {
 
 # SGY
 eval $(minikube docker-env)
-function envy {
-    (cd $HOME/envy && ./envy $@)
-}
-
