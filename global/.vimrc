@@ -39,6 +39,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 "Plugin 'lervag/vimtex'
 Plugin 'darfink/vim-plist'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'airblade/vim-gitgutter'
 "Plugin 'Valloric/YouCompleteMe'
 "let g:ycm_autoclose_preview_window_after_completion = 1
