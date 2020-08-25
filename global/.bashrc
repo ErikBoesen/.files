@@ -113,6 +113,10 @@ function pgc {
     git commit -m "$(git diff --cached --name-only): $2"
 }
 
+# SGY
+eval $(minikube docker-env)
+alias jira='open https://project.schoologize.com/browse/$(git rev-parse --abbrev-ref HEAD 2>/dev/null)'
+
 function cg {
     type=$1
     shift
@@ -120,9 +124,6 @@ function cg {
     shift
     git commit -m "$type($scope): $@ $(git rev-parse --abbrev-ref HEAD)"
 }
-
-# SGY
-eval $(minikube docker-env)
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
