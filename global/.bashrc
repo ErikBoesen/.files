@@ -109,6 +109,8 @@ alias nrd="native-run android --app $HOME/src/Comethru/app/platforms/android/app
 alias hl="heroku logs -t"
 alias hls="heroku logs -t --source=app"
 
+alias ip="ifconfig | grep 'inet ' | grep -Fv 127.0.0.1 | awk '{print \$2}'"
+
 function pgc {
     git commit -m "$(git diff --cached --name-only): $2"
 }
