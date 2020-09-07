@@ -116,4 +116,6 @@ function pgc {
     git commit -m "$(git diff --cached --name-only): $2"
 }
 
+eval "$(rbenv init -)"
+
 ~/.bashrc_host
