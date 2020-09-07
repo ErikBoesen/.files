@@ -108,6 +108,7 @@ alias nr="native-run android --app $HOME/src/Comethru/app/platforms/android/app/
 alias nrd="native-run android --app $HOME/src/Comethru/app/platforms/android/app/build/outputs/apk/debug/app-debug.apk --debug"
 alias hl="heroku logs -t"
 alias hls="heroku logs -t --source=app"
+alias hpp="heroku pg:psql"
 
 alias ip="ifconfig | grep 'inet ' | grep -Fv 127.0.0.1 | awk '{print \$2}'"
 
