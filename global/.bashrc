@@ -40,7 +40,7 @@ function dir_prompt {
         printf "\W"
         branch=$(git symbolic-ref --short HEAD)
 
-        if ! [[ $branch == "master" ]]; then # TODO: Support default branches not named master
+        if ! [[ $branch == "master" || $branch == "main" ]]; then # TODO: Support default branches not named master
             printf "\[\e[0;90m\]:$branch"
         fi
         printf "\[\e[0m\]"
