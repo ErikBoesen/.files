@@ -19,3 +19,30 @@ kllogs() {
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+
+# Scale deployment or statefulset up or down
+# Example usage: k-scale cassandra 0
+k-scale() {
+  ss=( $(kubectl get statefulset | grep "$1" | awk '{print $1}') )
+  for dep in "${ss[@]}"
+  do
+    kubectl scale statefulset "$dep" --replicas="$2"
+  done;
+  deployments=( $(kubectl get deployments | grep "$1" | awk '{print $1}') )
+  for dep in "${deployments[@]}"
+  do
+    kubectl scale deployment "$dep" --replicas="$2"
+  done;
+}
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /private/tmp/assessment-submission-service/node_modules/serverless-step-functions/node_modules/tabtab/.completions/serverless.bash ] && . /private/tmp/assessment-submission-service/node_modules/serverless-step-functions/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /private/tmp/assessment-submission-service/node_modules/serverless-step-functions/node_modules/tabtab/.completions/sls.bash ] && . /private/tmp/assessment-submission-service/node_modules/serverless-step-functions/node_modules/tabtab/.completions/sls.bash
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[ -f /private/tmp/assessment-submission-service/node_modules/serverless-step-functions/node_modules/tabtab/.completions/slss.bash ] && . /private/tmp/assessment-submission-service/node_modules/serverless-step-functions/node_modules/tabtab/.completions/slss.bash
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
