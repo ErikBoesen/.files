@@ -4,7 +4,11 @@
 [[ $(uname) == "Linux"  ]] && linux=true
 
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin
-ANDROID_HOME=$HOME/Library/Android/sdk
+if [[ $(hostname) == "mir" ]]; then
+    ANDROID_HOME=$HOME/Library/Android/sdk
+else
+    ANDROID_HOME=/usr/local/share/android-sdk
+fi
 if [[ $mac == true ]]; then
     PATH=$PATH:$HOME/Library/Python/3.7/bin
     PATH=$PATH:/usr/local/texlive/2019/bin/x86_64-darwin
