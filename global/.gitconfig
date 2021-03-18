@@ -2,7 +2,7 @@
     name = ErikBoesen
     email = me@erikboesen.com
 [credential]
-    helper = store
+	helper = store
 [core]
     whitespace = warn
     autocrlf = input
@@ -11,7 +11,5 @@
 	user = ErikBoesen
 [url "ssh://git@github.com/"]
     insteadOf = https://github.com/
-[ghi]
-	token = !security find-internet-password -a ErikBoesen -s github.com -l 'ghi token' -w
 [pull]
 	rebase = false
