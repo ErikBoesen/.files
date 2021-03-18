@@ -112,8 +112,8 @@ alias dist='rm -rf dist && python3 setup.py sdist && twine upload dist/*'
 alias nr="native-run android --app $HOME/src/Comethru/app/platforms/android/app/build/outputs/apk/debug/app-debug.apk"
 alias nrd="native-run android --app $HOME/src/Comethru/app/platforms/android/app/build/outputs/apk/debug/app-debug.apk --debug"
 alias redb='rm -rf migrations app.db dump.rdb && flask db init && flask db migrate -m init && flask db upgrade'
-alias hl="heroku logs -t"
-alias hls="heroku logs -t --source=app"
+alias hl="heroku logs -t -n 1000"
+alias hls="heroku logs -t --source=app -n 1000"
 alias hpp="heroku pg:psql"
 
 alias ip="ifconfig | grep 'inet ' | grep -Fv 127.0.0.1 | awk '{print \$2}'"
