@@ -1,6 +1,11 @@
 # SGY
 eval $(minikube docker-env)
 alias jira='open https://project.schoologize.com/browse/$(git rev-parse --abbrev-ref HEAD 2>/dev/null)'
+alias cdsgy="cd $HOME/envy/systems/schoology/lib/sgy-shared/src/sgy-core/schoology"
+
+function awsc {
+    export AWS_PROFILE=$1
+}
 
 function cg {
     type=$1
