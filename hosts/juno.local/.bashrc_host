@@ -40,6 +40,11 @@ envy-db-dump() {
     --set-gtid-purged=OFF  > $snapshot_dir/$dump_filename.sql && gzip -f $snapshot_dir/$dump_filename.sql
 }
 
+envy_mysql_port() {
+  local port="$(kubectl get service | grep percona | awk '{print $5}' | cut -c 6-10)"
+  echo $port;
+}
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
