@@ -29,6 +29,17 @@ kllogs() {
     kubectl exec "${pods[0]}" -- bash -c 'tail -n 50 -f /var/log/schoology/watchdog.log'
 }
 
+envy-db-dump() {
+  local dump="$(mysql-client-path)/mysqldump"
+  local port="$(envy-mysql-port)"
+  local snapshot_dir="$(envy-snapshot-dir)"
+  local dump_filename="${1:-mysqldump_dev}"
+  mkdir -p $snapshot_dir
+  $dump  --column-statistics=0 -h localenv.ninja -u schoologydev --password="schoologydev" --port $port \
+    --databases schoology_common_assessment_submissions schoology_common_assessments \
+    --set-gtid-purged=OFF  > $snapshot_dir/$dump_filename.sql && gzip -f $snapshot_dir/$dump_filename.sql
+}
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
