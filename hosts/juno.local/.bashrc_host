@@ -15,6 +15,14 @@ function cg {
     git commit -m "$type($scope): $@ $(git rev-parse --abbrev-ref HEAD)"
 }
 
+function cgn {
+    type=$1
+    shift
+    scope=$1
+    shift
+    git commit -nm "$type($scope): $@ $(git rev-parse --abbrev-ref HEAD)"
+}
+
 kllogs() {
     pods=($(kubectl get pods | grep "${1:-sgy-web}" | awk '{print $1}'))
     echo Found $#pods pod\(s\): $pods
