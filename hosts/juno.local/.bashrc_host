@@ -29,20 +29,35 @@ kllogs() {
     kubectl exec "${pods[0]}" -- bash -c 'tail -n 50 -f /var/log/schoology/watchdog.log'
 }
 
+mysql-client-path() {
+    echo "/usr/local/opt/mysql/bin"
+}
+# Method that returns current Port for Mysql DB inside of Envy
+envy-mysql-port() {
+    local port="$(kubectl get service | grep percona | awk '{print $5}' | cut -c 6-10)"
+    echo $port;
+}
+
 envy-db-dump() {
-  local dump="$(mysql-client-path)/mysqldump"
-  local port="$(envy-mysql-port)"
-  local snapshot_dir="$(envy-snapshot-dir)"
-  local dump_filename="${1:-mysqldump_dev}"
-  mkdir -p $snapshot_dir
-  $dump  --column-statistics=0 -h localenv.ninja -u schoologydev --password="schoologydev" --port $port \
-    --databases schoology_common_assessment_submissions schoology_common_assessments \
-    --set-gtid-purged=OFF  > $snapshot_dir/$dump_filename.sql && gzip -f $snapshot_dir/$dump_filename.sql
+    local dump="$(mysql-client-path)/mysqldump"
+    local port="$(envy-mysql-port)"
+    local snapshot_dir="$HOME/Desktop"
+    local dump_filename="${1:-mysqldump_dev}"
+    mkdir -p $snapshot_dir
+    $dump  --column-statistics=0 -h localenv.ninja -u schoologydev --password="schoologydev" --port $port \
+        --databases schoology_common_assessment_submissions schoology_common_assessments \
+        --set-gtid-purged=OFF  > $snapshot_dir/$dump_filename.sql && gzip -f $snapshot_dir/$dump_filename.sql
+}
+
+es-reindex() {
+    pods=( $(kubectl get pods | grep "sgy-web" | awk '{print $1}') )
+    echo Reindexing search for "${pods}"
+    kubectl exec "${pods}" -- bash -c "cd /var/www/html/schoology/docroot/scripts/search && php-cgi es-reindex.php"
 }
 
 envy_mysql_port() {
-  local port="$(kubectl get service | grep percona | awk '{print $5}' | cut -c 6-10)"
-  echo $port;
+    local port="$(kubectl get service | grep percona | awk '{print $5}' | cut -c 6-10)"
+    echo $port;
 }
 
 export NVM_DIR="$HOME/.nvm"
