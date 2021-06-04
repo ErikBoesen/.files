@@ -90,7 +90,6 @@ elif [[ $linux == true ]]; then
 fi
 
 alias r='. ~/.bashrc'
-alias git='hub'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
