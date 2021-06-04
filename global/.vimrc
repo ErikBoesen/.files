@@ -7,14 +7,8 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
-" set up clipboard
-if has("clipboard")
-  set clipboard=unnamed " copy to the system clipboard
-
-  if has("unnamedplus") " X11 support
-    set clipboard+=unnamedplus
-  endif
-endif
+" copy to the system clipboard
+set clipboard=unnamed
 
 set number
 set backspace=2
