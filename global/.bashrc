@@ -18,6 +18,7 @@ if [[ $mac == true ]]; then
     PATH=$PATH:$HOME/Library/Android/sdk/build-tools/29.0.2
     PATH=$PATH:/Applications/Postgres.app/Contents/Versions/12/bin
     PATH=$PATH:$HOME/.flutter/bin
+    PATH=$PATH:/opt/_pm/apache-maven/bin
 elif [[ $linux == true ]]; then
     PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin
 fi
