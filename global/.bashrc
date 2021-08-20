@@ -57,9 +57,9 @@ function dir_prompt {
     fi
 }
 
-char="𓆉  "
 char="𓆃  "
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
 function status_prompt {
     if [[ $1 -eq 0 ]]; then
         printf "\[\e[32m\]"
@@ -91,7 +91,6 @@ elif [[ $linux == true ]]; then
 fi
 
 alias r='. ~/.bashrc'
-alias git='hub'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'

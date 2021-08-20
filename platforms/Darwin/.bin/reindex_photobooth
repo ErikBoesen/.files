@@ -1,0 +1,18 @@
+import os
+import datetime
+
+files = [f for f in os.listdir('.') if f.endswith('.jpg')]
+for old_name in files:
+    dt_string = old_name.replace('Photo on ', '').replace('.jpg', '')
+    number = 1
+    if ' #' in dt_string:
+        dt_string, number = dt_string.split(' #')
+        number = int(number)
+    dt = datetime.datetime.strptime(dt_string, '%m-%d-%y at %I.%M %p')
+    dt = dt.replace(second=number - 1)
+    new_name = dt.strftime('%Y-%m-%d %H_%M_%S.jpg')
+    print(old_name + ' -> ' + new_name)
+    timestamp = int(dt.timestamp())
+    os.utime(old_name, (timestamp, timestamp))
+    os.rename(old_name, new_name)
+
