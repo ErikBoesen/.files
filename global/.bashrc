@@ -56,7 +56,12 @@ function dir_prompt {
     fi
 }
 
-char="𓆃  "
+
+if [[ $mac == true ]]; then
+    char="𓆃  "
+elif [[ $linux == true ]]; then
+    char="🐞"
+fi
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 function status_prompt {
