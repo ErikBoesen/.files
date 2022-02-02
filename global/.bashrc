@@ -11,7 +11,7 @@ else
 fi
 if [[ $mac == true ]]; then
     PATH=$PATH:$HOME/Library/Python/3.9/bin
-    PATH=$PATH:/usr/local/texlive/2019/bin/x86_64-darwin
+    PATH=$PATH:/usr/local/texlive/2021/bin/universal-darwin
     PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
     PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
     PATH=$PATH:$HOME/.rvm/bin
