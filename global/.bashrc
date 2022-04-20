@@ -59,9 +59,14 @@ function dir_prompt {
 
 
 if [[ $mac == true ]]; then
-    char="𓆃  "
+    #char="𓆃  "
+    char='ᐅ'
 elif [[ $linux == true ]]; then
-    char="🐞"
+    if [[ $(hostname) == juno ]]; then
+        char='🚀'
+    else
+        char='🐞'
+    fi
 fi
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
