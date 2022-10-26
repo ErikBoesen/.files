@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+killall -9 plugin-container \
+    com.apple.Safari.SafeBrowsing.Service \
+    Dock \
+    itunescloudd \
+    CalendarAgent \
+    cloudpaird \
+    chromedriver \
+    MTLCompilerService \
+    AppleSpell \
+    ControlCenter \
