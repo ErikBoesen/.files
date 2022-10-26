@@ -11,14 +11,11 @@ else
 fi
 if [[ $mac == true ]]; then
     PATH=$PATH:$HOME/Library/Python/3.9/bin
-    PATH=$PATH:/usr/local/texlive/2021/bin/universal-darwin
+    PATH=$PATH:/usr/local/texlive/2022/bin/universal-darwin
     PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
     PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
     PATH=$PATH:$HOME/.rvm/bin
     PATH=$PATH:$HOME/Library/Android/sdk/build-tools/29.0.2
-    PATH=$PATH:/Applications/Postgres.app/Contents/Versions/12/bin
-    PATH=$PATH:$HOME/.flutter/bin
-    PATH=$PATH:/opt/_pm/apache-maven/bin
 elif [[ $linux == true ]]; then
     PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin
 fi
@@ -26,7 +23,7 @@ fi
 export PATH
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
 
-#eval "$(rbenv init -)"
+eval "$(rbenv init - bash)"
 
 unset PROMPT_COMMAND
 # Instantly append commands to history
