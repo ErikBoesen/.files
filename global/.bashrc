@@ -120,6 +120,9 @@ alias redb='rm -rf migrations app.db dump.rdb && flask db init && flask db migra
 alias hl='heroku logs -t -n 1000'
 alias hls='heroku logs -t --source=app -n 1000'
 alias hpp='heroku pg:psql'
+function hcp {
+    export "$1=$(heroku config:get $1)"
+}
 
 alias ip="ifconfig | grep 'inet ' | grep -Fv 127.0.0.1 | awk '{print \$2}'"
 
